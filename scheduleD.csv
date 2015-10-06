@@ -1,0 +1,44 @@
+"Week","Date","Start Page"," End Page","Topic","Lisp Program"
+
+"0","12-Sep","none","none","Installation of software"
+"1","19-Sep","1","14","History of Lisp"
+"2","26-Sep","15","30","First Lisp program"
+"3","3-Oct","31","45","Lisp syntax"
+"4","10-Oct","49","66","Conditional statements (if, then, else)"
+
+"5","17-Oct","67","84","Lists, graphs, nodes, and edges"
+"6","24-Oct","85","102","reading, writing, and evaluation"
+"7","31-Oct","103","114","nameless functions and pointers"
+"8","7-Nov","114","127","creating pictures"
+"9","14-Nov","129","146","Wumpus, version 1"
+
+"10","21-Nov","129","152","Wumpus, version 2"
+"11","28-Nov","153","173","data structures"
+"12","5-Dec","172","192","Orc Battle"
+"13","12-Dec","192","220","evolution"
+"14","19-Dec","none","none","cipher text - writing and reading codes"
+
+"Christmas Break"
+
+"15","9-Jan","221","236","(format)"
+"16","16-Jan","237","252","input and output streams"
+"17","23-Jan","253","267","creating a web server"
+"18","30-Jan","291","302","introduction to functional programming"
+"19","6-Feb","303","321","Dice of Doom, version 1"
+
+"20","13-Feb","321","339","creating a smart opponent"
+"21","20-Feb","339","354","macros"
+"22","27-Feb","355","364","learning SVG"
+"23","6-Mar","365","374","completing Wizard's Game"
+"24","13-Mar","375","384","lazy programming (it's not what it sounds like)"
+
+"25","20-Mar","384","393","Dice of Doom, version 2"
+"26","27-Mar","393","400","alpha-beta pruning"
+"27","3-Apr","401","408","drawing SVG"
+"28","10-Apr","408","415","web server interface"
+"29","17-Apr","417","423","rolling the dice"
+
+"30","24-Apr","423","426","dice reinforcement rules"
+"31","30-Apr","none","none","class review - end of class"
+
+"End of course"

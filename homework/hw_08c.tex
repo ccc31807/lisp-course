@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{textcomp}
+
+\title{Homework, Week 8, part C}
+\date{December 20, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}Create a dot file for something that you know well. This could be the layout of your home, a map to a favorite spot, the rules of a game, the operation of a piece of machinery, or anything else that you can view as a graph. Then, execute the file using  \texttt{dot}, \texttt{circo}, and \texttt{neato}. Compare the results.
+
+\paragraph{}Here is a dot file I wrote to depict our organization structure at Troy. I don't expect you to do anything as elaborate. Still, if you run this file (it's best to use \texttt{circo}) you can see how easy it is to get some very good results.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+graph troy_01 
+{
+    node[shape=record, color=dimgrey, style=filled, fontsize=42];
+
+    Troy[label=" { Troy University | Cancellor | Jack Hawkins}"]
+
+    node[shape=record, color=lightgrey, style=filled];
+
+    GlobalCampus [label=" { Troy Global Campus | V/C TGC | Lance Tatum}"]
+    PhenixCity [label=" { Phenix City Campus | V/C Phenix City | David White }"]
+    Dothan [label=" { Dothan Campus | V/C Dothan | Don Jeffrey }"]
+    Montgomery [label=" { Montgomery Campus | V/C Montgomery | Ray White}"]
+
+    node[shape=Mrecord, color=black, style=bold];
+
+    Orlando [label=" { Orlando District | District Director | Chuck Helemdollar}"]
+    FtWaltonBeach [label=" { Ft. Walton Beach District | District Director | Alicia Bookout}"]
+    Augusta [label=" { Augusta District | District Director | Lynn Chapman}"]
+    Atlanta [label=" { Atlanta District | District Director | Bill Glisson}"]
+    SanAntonio [label=" { San Antonion District | District Director | tbd}"]
+
+    node[shape=Mrecord, color=black, style=rounded];
+
+    FtBenning [label=" { Ft Benning/Columbus Site | Site Director/Coordinator | Donna Myers }"]
+
+    Tampa [label=" { Tampa Site | Site Director/Coordinator | Carol Walters}"]
+    Hurlburt [label=" { Hurlburt Field Site | Site Director/Coordinator | Linda Germany}"]
+    Eglin [label=" { Eglin AFB Site | Site Director/Coordinator | Rob Morrison}"]
+    Pensacola [label=" { Pensacola Site | Site Director/Coordinator | Rick Puckett}"]
+    PanamaCity [label=" { Panama City Site | Site Director/Coordinator | Lisa Kitto}"]
+    Tyndall [label=" { tyndall AFB Site | Site Director/Coordinator | Beth Anslow}"]
+
+    FtGordon [label=" { Fort Gordon Site | Site Director/Coordinator | Dorothy Gandy }"]
+    Brunswick [label=" { Brunswick Site | Site Director/Coordinator | Lynn Champan }"]
+    Savannah [label=" { Savannah Site | Site Director/Coordinator | Lynn Chapman }"]
+    Sumter [label=" { Sumter Site | Site Director/Coordinator | Lisa Bennett }"]
+    Fayetteville [label=" { Fayetteville Site | Site Director/Coordinator | Patricia Bush-McManous }"]
+
+    Albany [label=" { Albany Site | Site Director/Coordinator | Lee Washington }"]
+    Covington [label=" { Covington Site | Site Director/Coordinator | Bob Bertram }"]
+    Clarksville [label=" { Clarksville Site | Site Director/Coordinator | Kathleen Akers }"]
+    Norfolk [label=" { Norfolk Site | Site Director/Coordinator | }"]
+    Arlington [label=" { Site | Arlington Site Director/Coordinator | Lester Wright }"]
+    Harrisburg [label=" { Harrisburg Site | Site Director/Coordinator | Erica Wurm }"]
+    HamptonRoads[label=" { Hampton Roads Site | Site Director/Coordinator | tbd }"]
+
+    ElPaso [label=" { El Paso Site | Site Director/Coordinator | Michael Moore }"]
+
+    rankdir=TB;
+    Troy -- GlobalCampus;
+    Troy -- PhenixCity;
+    Troy -- Dothan;
+    Troy -- Montgomery;
+
+    PhenixCity -- FtBenning;
+
+    GlobalCampus -- Orlando;
+    GlobalCampus -- FtWaltonBeach;
+    GlobalCampus -- Atlanta;
+    GlobalCampus -- Augusta;
+    GlobalCampus -- SanAntonio;
+
+    Orlando -- Tampa;
+
+    FtWaltonBeach -- Hurlburt;
+    FtWaltonBeach -- Eglin;
+    FtWaltonBeach -- Pensacola;
+    FtWaltonBeach -- PanamaCity;
+    FtWaltonBeach -- Tyndall;
+
+    Augusta -- FtGordon;
+    Augusta -- Brunswick;
+    Augusta -- Savannah;
+    Augusta -- Sumter;
+    Augusta -- Fayetteville;
+
+    Atlanta -- Albany;
+    Atlanta -- Covington;
+    Atlanta -- Clarksville;
+    Atlanta -- Norfolk;
+    Atlanta -- Arlington;
+    Atlanta -- Harrisburg;
+    Atlanta -- HamptonRoads;
+
+    SanAntonio -- ElPaso;
+
+}
+\end{lstlisting}
+
+\end{document}

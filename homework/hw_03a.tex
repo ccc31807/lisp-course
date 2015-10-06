@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Homework, Week 3, part A}
+\date{October 31, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}Suppose that you had a list that had four answers, like this: \texttt{("George Washington" "John Adams" "Thomas Jefferson" "James Madison")}. Suppose further that you had a string, like this: \texttt{"Who was the first president of the United States?"}. Suppose that you wanted to put the two together for a multiple choice question, like this: \texttt{("Who was the first president of the United States?"  ("Geore Washington" "John Adams" "Thomas Jefferson" "James Madison"))}. Finally, suppose that you wanted a lot of these kinds of lists to make a test.
+
+\paragraph{}I'm going to arbitrarily define some words that I'll use in the homework for this week. \textbf{question} will be a string. \textbf{answers} will be a list which contains a series of strings. \textbf{item} will be a list containing a question and answers. \textbf{items} will be a list containing several examples of \textbf{item}. Think of about ten questions and answers that you want to turn into a test, perhaps a subject that you are currently studying. I have copied my example below.
+
+\paragraph{}I'm lazy, so I wanted to make it easy for me. I defined a series of variables, a, b, c, d, etc. I made \textbf{items} by creating a list of these variables, as shown in the last line below. Each variable (a, b, c, d, etc) consists of a list, which contains a question and a list of answers. Each question is just a string. Each answer is a list of strings. To make it easier, I named each question \textbf{*ques}, and each answer list \textbf{*answer} where `*' is like `a,' `b,' `c,' etc.  Note two things. Each answer list \textit{contains a leading single quote}, an apostrophe. Also, \textit{the correct answer is the first item} in each list. Create your own list of questions and answers, or copy mine if you want to, load the file into clisp, then run the commands and answer the questions below.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+(defparameter aques "Who was the first president of the United States?")
+(defparameter aanswer '("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))
+(defparameter a (list aques aanswer))
+(defparameter bques "Who was the first black president of the United States?")
+(defparameter banswer '("Barack Obama" "George Washington" "John Adams" "Thomas Jefferson"))
+(defparameter b (list bques banswer))
+(defparameter cques "Who was the president during the Civil War?")
+(defparameter canswer '("Abraham Lincoln" "George Washington" "Theodore Roosevelt" "Barack Obama"))
+(defparameter c (list cques canswer))
+(defparameter dques "Who was the president that purchased Louisiana?")
+(defparameter danswer '("Thomas Jefferson" "Abraham Lincoln" "George Washington" "Theodore Roosevelt"))
+(defparameter d (list dques danswer))
+(defparameter eques "Who was the president that said 'Tear down this wall!'?")
+(defparameter eanswer '("Ronald Reagan" "Richard Nixon" "John Kennedy" "Harry Truman"))
+(defparameter e (list eques eanswer))
+(defparameter fques "Who was the president that was a famous general?")
+(defparameter fanswer '("Dwight Eisenhower" "Ronald Reagan" "Richard Nixon" "John Kennedy"))
+(defparameter f (list fques fanswer))
+(defparameter gques "Who was called 'the Father of the Constitution'?")
+(defparameter ganswer '("James Madison" "Thomas Jefferson" "George Washington" "Andrew Jackson"))
+(defparameter g (list gques ganswer))
+(defparameter hques "Which president was NOT from the South?")
+(defparameter hanswer '("Barack Obama" "George W. Bush" "Bill Clinton" "Jimmy Carter"))
+(defparameter h (list hques hanswer))
+(defparameter iques "Which president wrote the Declaration of Independence?")
+(defparameter ianswer '("Thomas Jefferson" "George Washington" "James Madison" "James Monroe"))
+(defparameter i (list iques ianswer))
+(defparameter jques "Who was NOT a president from the following list?")
+(defparameter janswer '("Alexander Hamilton" "Millard Filmore" "James Polk" "Benjamin Harrison"))
+(defparameter j (list jques janswer))
+(defparameter kques "Who was a president from the following list?")
+(defparameter kanswer '("John Tyler" "Benjamin Franklin" "Alexander Hamilton" "Aaron Burr"))
+(defparameter k (list kques kanswer))
+
+(defparameter items (list a b c d e f g h i j k))
+\end{lstlisting}
+
+\paragraph{}Run the following commands and see what they do.
+
+\begin{multicols}{2}
+\begin{lstlisting}
+(load "your-file-name.lisp")
+items
+(length items)
+(car items)
+(cadr items)
+(cdar items)
+(cdr items)
+
+a 
+;should be the same as (car items)
+(length a)
+(car a)
+(length (car a))
+(cdr a)
+(length (cdr a))
+(cadr a)
+(length (cadr a))
+(caadr a)
+(length (caadr a)
+;; what is the difference between CDR and CADR
+
+(nth 0 items)
+(nth 1 items)
+(nth 2 items)
+(elt items 0)
+(elt items 1)
+(elt items 2)
+;;what is the difference between ELT and NTH
+
+(car (nth 3 items))
+(cdr (nth 3 items))
+(cadr (nth 3 items))
+(caadr (nth 3 items))
+;;do the same thing with ELT
+\end{lstlisting}
+\end{multicols}
+
+\paragraph{}Using a combination of NTH (or ELT), and CAR, CADR, and CAADR, you should be able to pick out the questions, the list of answers, and the correct answer for each question. Practice this until you can do it.
+
+\end{document}

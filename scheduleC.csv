@@ -1,0 +1,35 @@
+Week,Date,Start Page, End Page,Topic,Lisp Program
+0,18-Oct,0,0,Installation of software,arithmetic
+1,25-Oct,1,14,History of Lisp,add-test.lisp
+2,1-Nov,15,30,First Lisp program,guess.lisp
+3,8-Nov,31,45,Lisp syntax,tester-lisp
+4,15-Nov,49,66,"Conditional statements (if, then, else)",testerA through testerD
+,,,,,
+5,22-Nov,67,84,"Lists, graphs, nodes, and edges",wizards - 1st version
+6,6-Dec,85,102,"Reading, writing, and evaluation",wizards - 2nd version
+7,13-Dec,103,114,Nameless functions and pointers,cipher.lisp
+8,20-Dec,114,127,Creating pictures,graphviz
+,,,,CHRISTMAS BREAK,cipher.lisp
+,,,,,
+9,10-Jan,129,145,Creating a city,Wumpus - 1st version
+10,17-Jan,146,153,Playing Wumpus,Wumpus - 2nd version
+11,24-Jan,153,173,Data structures,
+12,31-Jan,172,192,Orc battle,
+13,7-Feb,193,220,Genetic programming part 1,
+,,,,,
+14,14-Feb,193,220,Genetic programming part 2,
+15,21-Feb,221,236,(format),
+16,28-Feb,237,252,Outside connections,
+17,7-Mar,253,268,Serving HTML,
+18,14-Mar,291,302,Introduction to function programming,
+,,,,,
+19,21-Mar,303,321,"Building a large application, introduction",
+20,28-Mar,321,338,"Artificial intelligence, introduction",
+21,4-Apr,339,354,Macros,
+22,11-Apr,355,364,Scalar vector graphics,
+23,25-Apr,365,374,Gamification,
+,,,,,
+24,2-May,375,384,Lazy programming,
+25,9-May,384,400,More artificial intelligence,
+26,16-May,401,416,Chance and randomness,
+27,23-May,417,428,Game enhancements,

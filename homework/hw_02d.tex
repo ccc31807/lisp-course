@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 2, part D}
+\date{October 24, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}Implement and test the \texttt{(my-guess.lisp)} game you developed the specifications for and designed in homework 2C. I have copied my version below. You are allowed to look at my answer, but before you look at my answer, try to write it yourself. When you have written it, test it.
+
+\paragraph{}Do an internet search for ``common lisp function format'', ``common lisp function incf'', and ``common lisp function cond.'' I do not expect you to understand these, yet, but you will a little later on in the course. You should already understand the functions \texttt{(=)}, \texttt{(<)}, and \texttt{(>)} from Week 0.
+
+\lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;my-guess.lisp
+(defun start-guess-number ()
+  (defparameter number (+ 1 (random 100)))
+  (defparameter tries 0)
+  (format t "The computer has guessed a number between 1 and 100 ~%")
+  (play-game))
+
+(defun play-game ()
+  (format t "enter an number between 1 and 100:  ")
+  (incf tries)
+  (let ((guess (read)))
+    (cond
+      ((= number guess)
+       (format t "You guessed the number! It took you ~a tries.~%" tries))
+      ((> number guess)
+       (format t "Your guess was too small.~%")
+       (play-game))
+      ((< number guess)
+       (format t "Your guess was too big.~%")
+       (play-game)))))
+\end{lstlisting}
+
+\end{document}

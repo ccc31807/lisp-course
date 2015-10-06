@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Homework, Week 4, part D}
+\date{November 7, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}This builds on the tester you worked on yesterday. This is much easier, but you still have to think. You only have to change one little thing.
+
+\paragraph{}Alter the program to print the student's score at the end of the test. There's probably only one best way to do this. I have copied it below. The answer is $100 \times \frac{total-correct}{total-questions}$. You just have to figure out where to put it. Don't worry about \texttt{(format)}. I know you don't understand it, but we will have a week on it a little later and you will understand it them.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+(defun give-test (items)
+      (cond
+ ;B change to add condition
+ ;C change to print the number correct after the test
+        ((or (>= current-question total-questions) (null items)) 
+         ;;D changed to print the student's score at the end of the test.
+         (format t "Test over, you got ~a correct and made a ~d.~%" total-correct (* 100 (/ total-correct total-questions))) nil)
+        (t (let* ((len (length items))
+                  (num (random len)))
+             (ask-question (nth num items))
+             (give-test (remove (nth num items) items))))))
+\end{lstlisting}
+
+\end{document}

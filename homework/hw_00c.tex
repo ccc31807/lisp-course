@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 0, part C}
+\date{September 12, 2014}
+
+\begin{document}
+\maketitle{}
+\lstset{language=Lisp}
+
+\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores the Lisp functions, \texttt{(minusp), (zerop), (plusp), (evenp), (oddp), (rem), (mod), (random), and (ash)}. Write down each result and see if you can't figure out what each one does.\\
+
+\begin{multicols}{2}
+\begin{lstlisting}
+(minusp -1)
+(minusp 0)
+(minusp 1)
+(zerop -1)
+(zerop 0)
+(zerop 1)
+(plusp -1)
+(plusp 0)
+(plusp 1)
+
+(evenp 4)
+(evenp 5)
+(oddp 6)
+(oddp 7)
+
+;; run with (rem) and (mod)
+(rem 4 9)
+(rem 5 9)
+(rem 6 9)
+(rem 7 9)
+(rem 8 9)
+(rem 0 9)
+
+(rem 9 4)
+(rem 9 5)
+(rem 9 6)
+(rem 9 7)
+(rem 9 8)
+(rem 9 9)
+(rem 9 4)
+
+;; run these several times
+(random 1)
+(random 11)
+(random 101)
+(random 1.0)
+(random 11.0)
+(random 101.0)
+
+(ash 4 0)
+(ash 4 1)
+(ash 4 2)
+(ash 4 3)
+(ash 4 4)
+
+(ash 28 0)
+(ash 28 -1)
+(ash 28 -2)
+(ash 28 -3)
+(ash 28 -4)
+\end{lstlisting}
+\end{multicols}
+
+\end{document}

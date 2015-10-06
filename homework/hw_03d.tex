@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Homework, Week 3, part D}
+\date{October 31, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}Look at the following output. I have a variable, a list of lists, named \textbf{items}. I also have a function named \textbf{give-test} that takes as an argument the list of lists in items. Your assignment is to write the function that gives the test. The function is obviously incomplete, since it does not accept answers or keep score. We will do that next week.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+;;my output
+[187]> items
+(("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))
+ ("Who was the first black president of the United States?" ("Barack Obama" "George Washington" "John Adams" "Thomas Jefferson"))
+ ("Who was the president during the Civil War?" ("Abraham Lincoln" "George Washington" "Theodore Roosevelt" "Barack Obama"))
+ ("Who was the president that purchased Louisiana?" ("Thomas Jefferson" "Abraham Lincoln" "George Washington" "Theodore Roosevelt"))
+ ("Who was the president that said 'Tear down this wall!'?" ("Ronald Reagan" "Richard Nixon" "John Kennedy" "Harry Truman"))
+ ("Who was the president that was a famous general?" ("Dwight Eisenhower" "Ronald Reagan" "Richard Nixon" "John Kennedy"))
+ ("Who was called 'the Father of the Constitution'?" ("James Madison" "Thomas Jefferson" "George Washington" "Andrew Jackson"))
+ ("Which president was NOT from the South?" ("Barack Obama" "George W. Bush" "Bill Clinton" "Jimmy Carter"))
+ ("Which president wrote the Declaration of Independence?" ("Thomas Jefferson" "George Washington" "James Madison" "James Monroe"))
+ ("Who was NOT a president from the following list?" ("Alexander Hamilton" "Millard Filmore" "James Polk" "Benjamin Harrison"))
+ ("Who was a president from the following list?" ("John Tyler" "Benjamin Franklin" "Alexander Hamilton" "Aaron Burr")))
+[188]> (give-test items)
+
+Who was the first president of the United States?
+    Barack Obama
+    George Washington
+    Thomas Jefferson
+    John Adams
+
+Who was a president from the following list?
+    Aaron Burr
+    Benjamin Franklin
+    Alexander Hamilton
+    John Tyler
+
+Who was the president that purchased Louisiana?
+    Thomas Jefferson
+    George Washington
+    Abraham Lincoln
+    Theodore Roosevelt
+
+Who was the president that was a famous general?
+    John Kennedy
+    Dwight Eisenhower
+    Richard Nixon
+    Ronald Reagan
+
+Who was called 'the Father of the Constitution'?
+    George Washington
+    James Madison
+    Andrew Jackson
+    Thomas Jefferson
+
+Which president was NOT from the South?
+    Bill Clinton
+    George W. Bush
+    Jimmy Carter
+    Barack Obama
+
+Which president wrote the Declaration of Independence?
+    George Washington
+    Thomas Jefferson
+    James Monroe
+    James Madison
+
+Who was the president during the Civil War?
+    Abraham Lincoln
+    Barack Obama
+    Theodore Roosevelt
+    George Washington
+
+Who was NOT a president from the following list?
+    James Polk
+    Millard Filmore
+    Alexander Hamilton
+    Benjamin Harrison
+
+Who was the president that said 'Tear down this wall!'?
+    Harry Truman
+    Richard Nixon
+    Ronald Reagan
+    John Kennedy
+
+Who was the first black president of the United States?
+    Barack Obama
+    John Adams
+    George Washington
+    Thomas Jefferson
+NIL
+\end{lstlisting}
+
+\paragraph{}There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language. I will tell you in detail what each line of this function does. Think hard about it and try to understand how it works.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+;;my function
+(defun give-test (items)
+  (cond
+    ((null items) nil)
+    (t
+      (let* ((len (length items))
+             (num (random len)))
+        (ask-question (nth num items))
+        (give-test (remove (nth num items) items))))))
+\end{lstlisting}
+
+\textbf{Line 2.} `defun' defines the function, `give-test' names it, and `items' gives the name of the input data.\\
+\textbf{Line 3.} `cond' means `conditional' and means that we are about to make a choice\\
+\textbf{Line 4.} States that if items is empty (`null items'), the function returns nil\\
+\textbf{Line 5.} States that in all other cases the followings actions will take place (`t' means TRUE).\\
+\textbf{Line 6.} Creates a variable named `len' that consists of an integer equal to the length of the list.\\
+\textbf{Line 7.} Creates a variable named `num' which is a random number less than the length of the list.\\
+\textbf{Line 8.} Calls \textbf{(ask-question)}, passing a random item. Do you see why?\\
+\textbf{Line 9.} Calls \textbf{(give-test)} again, with the item just printed removed from the list.\\
+
+\paragraph{}This function goes through the list of items, prints one item at a time, and calls itself again after removing the item it just printed (so it will not print the same item twice). When all items have been printed and removed, the list of items is empty, and the function terminates. Try your best to visualize in your mind's eye how this works. You will see this pattern many times in the coming weeks.
+
+\end{document}

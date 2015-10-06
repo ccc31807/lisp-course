@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Homework, Week 3, part C}
+\date{October 31, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}This assignment uses the list you wrote previously. Write a function. Name it \texttt{(ask-question)}. It will take as an argument a list of a question and answers, like this: \texttt{("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))}. It will ask the question and then list the answers, as before.
+
+\paragraph{}There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+;;my output
+[184]> (defparameter q-and-a a)
+Q-AND-A
+[185]> q-and-a
+("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))
+[186]> (ask-question q-and-a)
+
+Who was the first president of the United States?
+    Thomas Jefferson
+    George Washington
+    Barack Obama
+    John Adams
+NIL
+\end{lstlisting}
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+;;my function
+(defun ask-question (item)
+  (format t "~%~a~%" (car item))
+  (list-answers (cadr item)))
+\end{lstlisting}
+
+\end{document}

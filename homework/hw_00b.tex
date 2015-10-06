@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 0, part B}
+
+\date{September 12, 2014}
+\begin{document}
+\maketitle{}
+\lstset{language=Lisp}
+
+\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores six Lisp functions, =, /=, \textgreater, \textgreater=, \textless, and \textless=. Write down each result and see if you can figure out what each one does. Some will create errors.\\
+
+\begin{multicols}{2}
+\begin{lstlisting}
+(= 9)
+(= 9 9)
+(= 9 9 9)
+(= 9 9 9 8)
+
+(/= 9)
+(/= 9 8)
+(/= 9 8 7 6)
+(/= 9 9 9 6)
+
+(< 9 8 7 6)
+(< 6 7 8 9)
+(< 6 6 7 8)
+
+(<= 9 8 7 6)
+(<= 6 7 8 9)
+(<= 6 6 7 8)
+
+(> 9 8 7 6)
+(> 6 7 8 9)
+(> 9 9 8 7)
+
+(>= 9 8 7 6)
+(>= 6 7 8 9)
+(>= 9 9 8 7)
+\end{lstlisting}
+\end{multicols}
+
+\paragraph{} Exit from clisp by entering \texttt{(QUIT)}.
+
+\end{document}

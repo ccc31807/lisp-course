@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{textcomp}
+
+\title{Homework, Week 6, part D}
+\date{December 6, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}Look at the function \texttt{(game-print)}. It takes a list as an argument. Now, execute each expression from the inside out:  \texttt{(prin1-to-string)}, \texttt{(string-trim)}, and \texttt{(coerce)}. Consider the following listing where I used the string ``I said \textquotesingle\textquotesingle{}Is that mother\textquotesingle{}s ring?\textquotesingle\textquotesingle{} to the robber.''
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+[28]> (prin1-to-string '(this is a list))
+"(THIS IS A LIST)"
+[29]> (string-trim "() " (prin1-to-string '(this is a list)))
+"THIS IS A LIST"
+[30]> (coerce (string-trim "() " (prin1-to-string '(this is a list))) 'list)
+(#\T #\H #\I #\S #\Space #\I #\S #\Space #\A #\Space #\L #\I #\S #\T)
+[31]> (tweak-text (coerce (string-trim "() " (prin1-to-string '(this is a list))) 'list) t nil)
+(#\T #\h #\i #\s #\Space #\i #\s #\Space #\a #\Space #\l #\i #\s #\t)
+[32]> (coerce (tweak-text (coerce (string-trim "() " (prin1-to-string '(this is a list))) 'list) t nil)>
+"This is a list"
+[33]>
+
+...
+[51] ;; I said "Is that mother's ring?" to the robber.
+[52]> (setf x (coerce (string-trim "() " (prin1-to-string '(I said "Is that mother's ring?" to the robb>
+(#\I #\Space #\S #\A #\I #\D #\Space #\" #\I #\s #\Space #\t #\h #\a #\t #\Space #\m #\o #\t #\h #\e #\r
+ #\' #\s #\Space #\r #\i #\n #\g #\? #\" #\Space #\T #\O #\Space #\T #\H #\E #\Space #\R #\O #\B #\B #\E
+ #\R #\.)
+[53]> x
+(#\I #\Space #\S #\A #\I #\D #\Space #\" #\I #\s #\Space #\t #\h #\a #\t #\Space #\m #\o #\t #\h #\e #\r
+ #\' #\s #\Space #\r #\i #\n #\g #\? #\" #\Space #\T #\O #\Space #\T #\H #\E #\Space #\R #\O #\B #\B #\E
+ #\R #\.)
+[54]> (trace tweak-text)
+;; Tracing function TWEAK-TEXT.
+(TWEAK-TEXT)
+[55]> (tweak-text x t nil)
+\end{lstlisting}
+
+\paragraph{}Here is your assignment: Trace \texttt{(tweak-text)} by passing it an appropriate list. The list is composted of single characters, which look like \texttt{\#\textbackslash{}T \#\textbackslash{}Space \#\textbackslash{}?}. For every call to \texttt{(tweak-text)} understand EXACTLY what is being passed in the function call, including the second and third arguments, \texttt{caps} and \texttt{lit}. For every return from \texttt{(tweak-text)} understand EXACTLY what is being returned. \texttt{(tweak-text)} has six conditions, and you need to understand EXACTLY what each condition does, and why. This is not a trivial assignment, you will probably need to spend a lot of quality time with \texttt{(tweak-text)}.
+
+\end{document}

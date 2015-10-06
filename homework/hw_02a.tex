@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 2, part A}
+\date{October 24, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}The software development process has four steps. This week's homework will walk you through all four steps. The steps are: (1) analysis, (2) design, (3) implementation, and (4) testing. The process repeats all four steps, one after another, many times before the software is complete.
+
+\paragraph{Analysis}The purpose of analysis is to develop the \textbf{functional requirements} of the software -- what the software is supposed to do. Suppose you were to develop a number guessing game, with numbers between 1 and 100, with the computer to guess the number you pick. Write down everything you can think of that the software should do. This might include things like (a) tell the computer that its guess was too high or low, and (b) check the guesses.
+
+\paragraph{Design}The purpose of design is to think about how the software will actually be written. Taking your functional requirements from the previous answer, develop a design for your addition test. This might include such things as (a) start the game, (b) stop the game, and (c) tell when an answer is correct.
+
+\paragraph{}Make sure that you think hard about your answers and that you write them down. You will use these answers for the rest of the week when we implement the addition test. Barski has done some of this on page 22 of the book, but he did not distinguish between requirements and design. For example, steps 3 and 4 would be part of the functional requirements, while steps 1 and 2 would be part of the design.
+
+%\lstset{language=Lisp}
+%\begin{multicols}{2}
+%\begin{lstlisting}
+%(+)
+%(+ 1)
+%(+ 1 2)
+%(+ 1 2 3)
+%(+ 1 2 3 4)
+%
+%(-) ;this is an error
+%(- 4)
+%(- 4 3)
+%(- 4 3 2)
+%(- 4 3 2 1)
+%
+%(*)
+%(* 1)
+%(* 1 2)
+%(* 1 2 3)
+%(* 1 2 3 4)
+%
+%(/)
+%(/ 4)
+%(/ 4 3)
+%(/ 4 3 2)
+%(/ 4 3 2 1)
+%
+%;;do these give the same answer?
+%(/ 7 21)
+%(/ 7.0 21)
+%(/ 7 21.0)
+%
+%(expt 2 0)
+%(expt 2 1)
+%(expt 2 2)
+%(expt 2 3)
+%(expt 2 4)
+%(expt 2 5)
+%(expt 100 2)
+%(expt 2 100)
+%;;this will impress you!
+%(expt 99 99)
+%\end{lstlisting}
+%\end{multicols}
+
+\end{document}

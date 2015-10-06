@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Lisp Programming Course - Week 6</title>
+        <link href="lisp.css" rel="stylesheet" type="text/css" />
+    </head>    
+    <body>
+
+        <p><a href="index.html">Return to course home</a></p>
+
+        <h1>Programming Lisp Course Page - Week 6</h1>
+
+        <h3>Read <i>Land of Lisp</i>, pages 85 through 102.</h3>
+
+        <p>Read these pages two or three times, or more if you need to. This is hard to understand until you have practiced it many times. When you have written these functions many times, you will not give it a second thought. The only way to overcome your lack of understanding is to practice these functions.</p>
+
+        <p>In your lisp interpreter, run <code>(loop (print (eval (read))))</code>. This will not return anything, as it will sit there forever waiting for you to type something. While in the loop, evaluate:
+        <ul>
+            <li>4 (an integer)</li>
+            <li>3.333 (a floating point number)</li>
+            <li>3/7 (a ratio)</li>
+            <li>17/51 (another ratio)</li>
+            <li>(* 3 4) (an expression)</li>
+            <li>(ash 4 4) (another expression)</li>
+            <li>'a (a symbol, note the leading single quote)</li>
+            <li>:a (a key symbol, note the leading colon)</li>
+            <li>"Hello" (a string)</li>
+            <li>#\a (a character)</li>
+            <li>(code-char 65) (an expression)</li>
+            <li>(char-code #\A) (an expression)</li>
+            <li>(break) What does this do?</li>
+        </ul>
+        </p>
+
+        <p>Virtually all computer programs take input of some kind, process the input, and produce output. Virtually all of the input sent to computer programs is sent to the program using some kind of <code>(read)</code>. This isn't unique to Lisp, but is common to all languages. Virtually all of the output sent from computer programs is sent from the program using some kind of <code>(print)</code>. This isn't unique to Lisp, but is common to all languages. Once you have written <code>(read)</code> and <code>(print)</code> routines several hundred times, you will never think about it. Until then, you will think hard every time you write one.</p>
+
+        <p>The homework looks at several debugging (testing) tools. These include  <code>(dribble)</code>, <code>(trace)</code>, and the debugger. The homework also introduces you to some language documentation. This is an overwhelming amount of material. Your take-away should be the knowledge that these things exist. You have the rest of your life to figure out how these things work. Don't try to comprehend them in a week.</p>
+
+        <h3>Homework</h3>
+
+            <ol>
+                <li><a href="homework/hw_06a.pdf">homework/hw_06a.pdf</a></li>
+                <li><a href="homework/hw_06b.pdf">homework/hw_06b.pdf</a></li>
+                <li><a href="homework/hw_06c.pdf">homework/hw_06c.pdf</a></li>
+                <li><a href="homework/hw_06d.pdf">homework/hw_06d.pdf</a></li>
+             <ol>
+
+             <p><a href="index.html">Return to course home</a></p>
+    </body>
+</html>

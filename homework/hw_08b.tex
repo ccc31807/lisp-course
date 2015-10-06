@@ -1,0 +1,95 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+\title{Homework, Week 8, part B}
+\date{December 20, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{}As I indicated yesterday, your biggest problem may be running the dot commands. Generally, when you install software on Windows, the installer adds the executables to the PATH variable. Graphviz used to work like this, but I have read that it no longer does. If you try to run dot at the command line and it does not work, you have three options. First, you can add the executable directory to your PATH variable. This is what I had to do when I reinstalled graphviz a few days ago. Second, you can give the command with the full path, like this: \texttt{c:\textbackslash{}Programs Files (x86)\textbackslash{}Graphviz2.34\textbackslash{}bin\textbackslash{}dot}. Your third option is to create a batch file that runs the command. If you can't figure this out, email me.
+
+\paragraph{}To see how you run the dot command, look at the listing below. You don't have to understand all the options, but you \textit{do} have to understand the \texttt{-?}, \texttt{-o}, and \texttt{-T} options.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+C:\Users\carter\lisp\dot>dot -?
+Usage: dot [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
+(additional options for neato)    [-x] [-n<v>]
+(additional options for fdp)      [-L(gO)] [-L(nUCT)<val>]
+(additional options for memtest)  [-m<v>]
+(additional options for config)  [-cv]
+
+ -V          - Print version and exit
+ -v          - Enable verbose mode
+ -Gname=val  - Set graph attribute 'name' to 'val'
+ -Nname=val  - Set node attribute 'name' to 'val'
+ -Ename=val  - Set edge attribute 'name' to 'val'
+ -Tv         - Set output format to 'v'
+ -Kv         - Set layout engine to 'v' (overrides default based on command name)
+ -lv         - Use external library 'v'
+ -ofile      - Write output to 'file'
+ -O          - Automatically generate an output filename based on the input filename with a .'format' app
+ended. (Causes all -ofile options to be ignored.)
+ -P          - Internally generate a graph of the current plugins.
+ -q[l]       - Set level of message suppression (=1)
+ -s[v]       - Scale input by 'v' (=72)
+ -y          - Invert y coordinate in output
+
+ -n[v]       - No layout mode 'v' (=1)
+ -x          - Reduce graph
+
+ -Lg         - Don't use grid
+ -LO         - Use old attractive force
+ -Ln<i>      - Set number of iterations to i
+ -LU<i>      - Set unscaled factor to i
+ -LC<v>      - Set overlap expansion factor to v
+ -LT[*]<v>   - Set temperature (temperature factor) to v
+
+ -m          - Memory test (Observe no growth with top. Kill when done.)
+ -m[v]       - Memory test - v iterations.
+
+ -c          - Configure plugins (Writes $prefix/lib/graphviz/config
+               with available plugin information.  Needs write privilege.)
+ -?          - Print usage and exit
+\end{lstlisting}
+
+
+\paragraph{}If you read the dotguide PDF yesterday, you would have seen some examples of dot files. Here is a very simple dot file I wrote. Copy this file to your machine, and then run the commands I have listed. These commands create a PDF version, a PNG version, and an SVG version of the graph.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+digraph
+{
+    a -> b;
+    a -> c;
+    a -> d;
+    b -> e;
+    c -> e;
+    d -> e;
+}
+\end{lstlisting}
+
+\paragraph{}Here are the commands.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}
+C:\Users\carter\lisp\dot>dot -Tpng test1.dot -o test1.png
+C:\Users\carter\lisp\dot>dot -Tpdf test1.dot -o test1.pdf
+C:\Users\carter\lisp\dot>dot -Tsvg test1.dot -o test1.svg
+C:\Users\carter\lisp\dot>circo -Tpng test1.dot -o test1circo.png
+C:\Users\carter\lisp\dot>circo -Tpdf test1.dot -o test1circo.pdf
+C:\Users\carter\lisp\dot>circo -Tsvg test1.dot -o test1circo.svg
+C:\Users\carter\lisp\dot>circo -Tsvg test1.dot -o test1circo.svg
+C:\Users\carter\lisp\dot>neato -Tpng test1.dot -o test1neato.png
+C:\Users\carter\lisp\dot>neato -Tpdf test1.dot -o test1neato.pdf
+\end{lstlisting}
+
+\paragraph{}Tomorrow's assignment asks you to look at node and edge decorations, specifically labels and shapes. Reread the `dotguide.pdf' document, or if you have not already read it, read it for the first time. Pay close attention to Section 2, pages 4 -- 12.
+
+\end{document}

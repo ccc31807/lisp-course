@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Homework, Week 6, part A}
+\date{December 6, 2013}
+
+\begin{document}
+\maketitle{}
+
+\paragraph{Part 1}Do an internet search for the Common Lisp HyperSpec. Look at \texttt{(dribble)} by following $Symbol Index \rightarrow{} D \rightarrow{} dribble$.  Look at \texttt{(trace)} by following $Symbol Index \rightarrow{} T \rightarrow{} trace$. 
+
+\paragraph{}You can download the Common Lisp HyperSpec and install it on your computer. Go to \url{http://www.lispworks.com/documentation/common-lisp.html} and download the file \texttt{HyperSpec-7-0.tar.gz} file. This is a compressed archive file, and you will need a program to unzip it. I use 7-zip and can vouch that it works well. 7-zip is free software. This part of the assignment is optional, but it makes sense to have the HyperSpec on your local machine if you ever work off-line.
+
+\paragraph{Part 2}Do an internet search for the Common Lisp Quick Reference. You well find some downloadable PDF files that you can download to your machine. Open the one you choose to download and look up \texttt{(dribble)} and  \texttt{(trace)}. The PDFs are made for printing on a physical printer (i.e., a paper copy) and are not convenient to search electronically.
+
+\paragraph{}You can print the CLQR, fold it, and carry it with your book. I have printed a separate copy of the CLQR for every Lisp book I own, over a dozen, and I literally don't leave home without it. This part of the assignment is optional, but it makes sense to have the CLQR with you when you are reading the book.
+
+%\paragraph{}This week, you will implement the code for the Wizard game in Chapter 5. It's best for you to copy the code manually, that is, type it yourself with te keyboard. If you need to, you can copy it from the web site.
+%
+%\paragraph{}There are five pieces of code that we will look at today. The first is the list \texttt{*nodes*} on page 70. This is nothing more than the questions and answers that we did for the test. If you like, you can type this in the same way we did for the tester program. The second list is \texttt{*edges*} on page 72. Again, you have seen this before.
+%
+%\paragraph{} There are also three functions. The first is \texttt{(describe-location)}. Please understand what \texttt{(assoc)} does, what it returns, and why we take the \texttt{(cadr)} of the return value of \texttt{(assoc)}. The second function is\texttt{(describe-path)}. Again, you should understand what the \texttt{(cadr)} and the \texttt{(caddr)} of the ``edge'' that is passed as an argument to the function.
+%
+%\paragraph{}The final function for today is \texttt{(describe-paths)}. IT IS VERY, VERY IMPORTANT THAT YOU UNDERSTAND THIS FUNCTION IN DETAIL! If possible, you should tatoo this on the back of your eyelids so you can study it with your eyes closed. As with many functions in Lisp, you should understand this function from the inside out. The first piece is \texttt{(assoc)} --- understand completely the arguments that are passed to this function, and what it returns. The second piece is \texttt{(cdr)} --- again, understand why you need to take the remainder of the list returned. What is the return value of \texttt{(assoc)}, and what is the \texttt{(cdr)} of it? The third and fourth functions are \texttt{(describe-path)} and \texttt{(mapcar)}. You already know what \texttt{(describe-path)} does. What does \texttt{(mpacar)} do, and what does it produce as a return value? The last two functions are \texttt{(append)} and \texttt{(apply)}. Once you understand all the pieces, understand how the function \texttt{(describe-paths)} works as a whole. You will be seeing a lot of this kind of coding throughout this book, and the earlier you understand how it works, the more progress you will make.
+%
+%\paragraph{}I don't like to do things the same way Barski does. Here is my version of the definition of \texttt{*nodes*} and \texttt{*edges*}. I also added a bedroom and a kitchen. If you like, you can add other locations. You can do things however you like.
+%
+%\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+%\begin{lstlisting}
+%(defparameter aplace 'living-room)
+%(defparameter adesc '(you are in the living-room. a wizard is snoring loudly on the couch.))
+%(defparameter a (list aplace adesc))
+%
+%(defparameter bplace 'garden)
+%(defparameter bdesc '(you are in a beautiful garden. there is a well in front of you.))
+%(defparameter b (list bplace bdesc))
+%
+%(defparameter cplace 'attic)
+%(defparameter cdesc '(you are in the attic. there is a giant welding torch in the corner.))
+%(defparameter c (list cplace cdesc))
+%
+%(defparameter dplace 'bedroom)
+%(defparameter ddesc '(you are in the bedroom. there is an unmade bed in the corner.))
+%(defparameter d (list dplace ddesc))
+%
+%(defparameter eplace 'kitchen)
+%(defparameter edesc '(You are in the kitchen. there are strange green things growing from dirty plates on the table.))
+%(defparameter e (list eplace edesc))
+%
+%(defparameter *nodes* (list a b c d e))
+%
+%(defun describe-location (location nodes)
+%   (cadr (assoc location nodes)))
+%
+%(defparameter qedge 'living-room)
+%(defparameter qpath-1 '(garden west door))
+%(defparameter qpath-2 '(attic upstairs ladder))
+%(defparameter qpath-3 '(kitchen south arch))
+%(defparameter qpath-4 '(bedroom east door))
+%(defparameter q (list qedge qpath-1 qpath-2 qpath-3 qpath-4))
+%
+%(defparameter redge 'garden)
+%(defparameter rpath-1 '(living-room east door))
+%(defparameter r (list redge rpath-1))
+%
+%(defparameter sedge 'attic)
+%(defparameter spath-1 '(living-room downstairs ladder))
+%(defparameter s (list sedge spath-1))
+%
+%(defparameter tedge 'bedroom)
+%(defparameter tpath-1 '(kitchen west door))
+%(defparameter tpath-2 '(living-room west door))
+%;; can't use t as a variable, so use t* instead
+%(defparameter t* (list tedge tpath-1 tpath-2))
+%
+%(defparameter uedge 'kitchen)
+%(defparameter upath-1 '(living-room north arch))
+%(defparameter upath-2 '(bedroom east door))
+%(defparameter u (list uedge upath-1 upath-2))
+%
+%(defparameter *edges* (list q r s t* u))
+%
+%(defun describe-path (edge)
+%  `(there is a ,(caddr edge) going ,(cadr edge) from here.))
+%
+%(defun describe-paths (location edges)
+%  (apply #'append (mapcar #'describe-path (cdr (assoc location edges)))))
+%\end{lstlisting}
+
+\end{document}

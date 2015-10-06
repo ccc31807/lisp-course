@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 0, part D}
+\date{September 12, 2014}
+
+\begin{document}
+\maketitle{}
+\lstset{language=Lisp}
+
+\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores five Lisp functions, + (addition), - (subtraction), * (multiplication), and / (division), and (expt) which is short for `exponent'. Write down each result and see if you can figure out what each one does.\\
+
+\begin{lstlisting}
+;;type these in clisp
+;;then, do them by hand
+(+ (* 3 5) (* 4 2))
+(/ (+ 4 3) (* 6 2))
+(/ (* (- 7 3) (+ 2 2)) 3)
+(* (+ 5 4) (* 2 4) (- 13 7) (/ 36 12))
+(/ (+ (* 6 4) (* 3 4)) (- (* 9 11) (* 8 7)))
+
+;;do these by hand
+;;then, type them in clisp
+\end{lstlisting}
+$(5 + 8) \times (18 - 10)$ \\
+\\
+$(5 + 4) \times (3 - 2) \div (99 + 99)$\\
+\\
+$\frac{(4 \times 3) + (10 + 2)}{(20 - 13) + (2 + 2)}$ \\
+\\
+$\frac{(4 \times 3) + (10 + 2) - (+ 5 5)}{(20 - 13) + (2 + 2) \times -1}$ \\
+\\
+$\frac{1}{( 4 \:+ \: 3) \times (10 \:- \:    3)}$ \\
+\\
+HINT: \texttt{(expt 4 -1)} is the same thing as dividing 1 by 4. In other words, \texttt{(expt (- 7 3) -1)} is the same thing as $\frac{1}{7 - 3}$ or $1 \div (7 - 3)$. \\
+
+
+\paragraph{}Exit from clisp with \texttt{(QUIT)}.
+\end{document}

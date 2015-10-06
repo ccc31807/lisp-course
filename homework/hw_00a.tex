@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 0, part A}
+\date{September 12, 2014}
+
+\begin{document}
+\maketitle{}
+\lstset{language=Lisp}
+
+\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores five Lisp functions, + (addition), - (subtraction), * (multiplication), and / (division), and (expt) which is short for `exponent'. Write down each result and see if you can figure out what each one does. Some will create errors, such as \texttt{(-)}.\\
+
+\begin{multicols}{2}
+\begin{lstlisting}
+(+)
+(+ 1)
+(+ 1 2)
+(+ 1 2 3)
+(+ 1 2 3 4)
+
+(-) ;this is an error
+(- 4)
+(- 4 3)
+(- 4 3 2)
+(- 4 3 2 1)
+
+(*)
+(* 1)
+(* 1 2)
+(* 1 2 3)
+(* 1 2 3 4)
+
+(/)
+(/ 4)
+(/ 4 3)
+(/ 4 3 2)
+(/ 4 3 2 1)
+
+;;do these give the same answer?
+(/ 7 21)
+(/ 7.0 21)
+(/ 7 21.0)
+
+(expt 2 0)
+(expt 2 1)
+(expt 2 2)
+(expt 2 3)
+(expt 2 4)
+(expt 2 5)
+(expt 100 2)
+(expt 2 100)
+;;this will impress you!
+(expt 99 99)
+\end{lstlisting}
+\end{multicols}
+
+\paragraph{}Exit from clisp with \texttt{(QUIT)}.
+\end{document}
