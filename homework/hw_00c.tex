@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[top=1in]{geometry}
 \usepackage{listings}
 \usepackage{multicol}
 
@@ -10,7 +11,9 @@
 \maketitle{}
 \lstset{language=Lisp}
 
-\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores the Lisp functions, \texttt{(minusp), (zerop), (plusp), (evenp), (oddp), (rem), (mod), (random), and (ash)}. Write down each result and see if you can't figure out what each one does.\\
+Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores the Lisp functions, \texttt{(minusp), (zerop), (plusp), (evenp), (oddp), (rem), (mod), (random), and (ash)}. Write down each result and see if you can figure out what each one does.
+
+Functions that end in the letter ``p'' are called \textit{predicates}. Predicates return either TRUE or FALSE. This homework also includes the remainder (or modulus) operations. \texttt{(random)} is a random number generator, useful for games of chance. \texttt{(ash)} is the arithmetic shift function. It takes two arguments, the number to be shifted, and a number indicating the amount to shift -- to the left for a positive amount, and to the right for a negative number -- effectively doubling or halving the number given as the first argument.
 
 \begin{multicols}{2}
 \begin{lstlisting}
@@ -36,7 +39,6 @@
 (rem 7 9)
 (rem 8 9)
 (rem 0 9)
-
 (rem 9 4)
 (rem 9 5)
 (rem 9 6)
@@ -46,11 +48,12 @@
 (rem 9 4)
 
 ;; run these several times
+;What is the difference?
+(random 1.0)
 (random 1)
 (random 11)
-(random 101)
-(random 1.0)
 (random 11.0)
+(random 101)
 (random 101.0)
 
 (ash 4 0)
@@ -58,7 +61,6 @@
 (ash 4 2)
 (ash 4 3)
 (ash 4 4)
-
 (ash 28 0)
 (ash 28 -1)
 (ash 28 -2)

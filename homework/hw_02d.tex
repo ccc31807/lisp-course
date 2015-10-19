@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[top=1in]{geometry}
 \usepackage{listings}
 \usepackage{multicol}
 
@@ -9,32 +10,36 @@
 \begin{document}
 \maketitle{}
 
-\paragraph{}Implement and test the \texttt{(my-guess.lisp)} game you developed the specifications for and designed in homework 2C. I have copied my version below. You are allowed to look at my answer, but before you look at my answer, try to write it yourself. When you have written it, test it.
+A computer's memory consists of numbered cells, billions of them. The numbers are hexadecimal numbers, and raw memory addresses look like this: 35a6bf95468a20c2. Because the memory addresses are so hard to remember, we can give individual memory cells names, like \textit{sum} or \textit{count}. We can then place \textit{values} in memory cells, and access the values by calling the name of the memory cell. We call this name-value combination a \textit{variable}.
 
-\paragraph{}Do an internet search for ``common lisp function format'', ``common lisp function incf'', and ``common lisp function cond.'' I do not expect you to understand these, yet, but you will a little later on in the course. You should already understand the functions \texttt{(=)}, \texttt{(<)}, and \texttt{(>)} from Week 0.
+More formally, we speak of \textit{binding} a value to a variable. When the variable has a value, we say that the variable is \textit{bound}. When the variable does not have a value, we say that the variable is \textit{unbound}.
 
+Variables that can be seen and accessed throughout the entire program are called \textit{global} variables. Variables that can be seen only in a part of the program are called \textit{lexical} variables, or sometimes \textit{local} variables. Lisp has a number of ways of binding variables to values. Evaluate the following statements. Then, look up the functions and read the function definitions.
 \lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
 \begin{lstlisting}
-;;;my-guess.lisp
-(defun start-guess-number ()
-  (defparameter number (+ 1 (random 100)))
-  (defparameter tries 0)
-  (format t "The computer has guessed a number between 1 and 100 ~%")
-  (play-game))
+;; global variable bindings
+;; we will mostly use defparameter
+(defparameter a 2)
+(defvar b 4)
+(defconstant c 6)
+(+ a b c)
 
-(defun play-game ()
-  (format t "enter an number between 1 and 100:  ")
-  (incf tries)
-  (let ((guess (read)))
-    (cond
-      ((= number guess)
-       (format t "You guessed the number! It took you ~a tries.~%" tries))
-      ((> number guess)
-       (format t "Your guess was too small.~%")
-       (play-game))
-      ((< number guess)
-       (format t "Your guess was too big.~%")
-       (play-game)))))
+;; lexical variable bindings
+;; we will mostly use setf
+(setf d 3)
+(setq e 5)
+(set 'f 7)
+(+ d e f)
+
+;; lexical variable bindings
+;;   used inside functions for
+;;   temporary variables
+;; also see another version, let*
+(let 
+  ((g 10)
+   (h 20)
+   (i 30))
+  (+ g h i)) 
 \end{lstlisting}
 
 \end{document}

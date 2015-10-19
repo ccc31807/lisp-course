@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[top=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{listings}
 \usepackage{multicol}
@@ -11,7 +12,9 @@
 \maketitle{}
 \lstset{language=Lisp}
 
-\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores five Lisp functions, + (addition), - (subtraction), * (multiplication), and / (division), and (expt) which is short for `exponent'. Write down each result and see if you can figure out what each one does.\\
+Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores five Lisp functions, + (addition), - (subtraction), * (multiplication), and / (division), and (expt) which is short for `exponent'. Write down each result and see if you can figure out what each one does.
+
+These are just arithmetic problems, no algebra. They are not complicated, but you have to think through the order of operations. The purpose of this exercise is to give you experienced in nesting functions, that is, calling functions inside other functions. For example, \texttt{(/ (+ 3 1) (* 0.5 4))} is simply $\frac{3 + 1}{0.5 * 4}$, or 2.
 
 \begin{lstlisting}
 ;;type these in clisp
@@ -27,13 +30,13 @@
 \end{lstlisting}
 $(5 + 8) \times (18 - 10)$ \\
 \\
-$(5 + 4) \times (3 - 2) \div (99 + 99)$\\
+$(5 + 4) \times (3 - 2) \div (90 + 9)$\\
 \\
-$\frac{(4 \times 3) + (10 + 2)}{(20 - 13) + (2 + 2)}$ \\
+$\frac{(4 \times 3) \times (10 + 2) - 80}{(20 - 17) + (25 \div 5)}$ \\
 \\
-$\frac{(4 \times 3) + (10 + 2) - (+ 5 5)}{(20 - 13) + (2 + 2) \times -1}$ \\
+$\frac{(4 \times 3) + (10 + 2) - (5 + 5)}{((20 - 13) - (3 + 2)) \: \times \: 6}$ \\
 \\
-$\frac{1}{( 4 \:+ \: 3) \times (10 \:- \:    3)}$ \\
+$\frac{1}{( 4 \: + \: 3) \times (10 \:- \:    3) + 1}$ \\
 \\
 HINT: \texttt{(expt 4 -1)} is the same thing as dividing 1 by 4. In other words, \texttt{(expt (- 7 3) -1)} is the same thing as $\frac{1}{7 - 3}$ or $1 \div (7 - 3)$. \\
 

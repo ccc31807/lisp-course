@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[top=1in]{geometry}
 \usepackage{listings}
 \usepackage{multicol}
 \usepackage{url}
@@ -10,8 +11,40 @@
 \begin{document}
 \maketitle{}
 
-\paragraph{}Copy the file \texttt{(guess.lisp)}, and rename the file to create a new test, call it \texttt{my-guess.lisp}, to allow the computer to pick a number for you to guess. Go through the analysis and design phases. A little thought before hand will save you a lot of work later on.
+\section{Analysis and design}
 
-\paragraph{} Before you make any changes, think about the requirements of the new program, and design the changes. In other words, do the analysis and design phases. After you make the changes, test your new program to see if it meets the requirements.
+Create a new file, call it \texttt{my-guess.lisp}, to allow the computer to pick a number for you to guess. Go through the analysis and design phases. A little thought before hand will save you a lot of work later on.
+
+ Before you write any code, think about the requirements of the new program, and how you would design the program. In other words, do the analysis and design phases. After you make the changes, test your new program to see if it meets the requirements.
+
+\section{Implementation and testing}
+
+Implement and test the \texttt{my-guess.lisp}. I have copied my version below. You are allowed to look at my answer, but before you look at my answer, try to write it yourself. When you have written it, test it.
+
+Do an internet search for ``common lisp function format'', ``common lisp function incf'', and ``common lisp function cond.'' I do not expect you to understand these, yet, but you will a little later on in the course. You should already understand the functions \texttt{(=)}, \texttt{(<)}, and \texttt{(>)} from Week 0.
+
+\lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;my-guess.lisp
+(defun start-guess-number ()
+  (defparameter number (+ 1 (random 100)))
+  (defparameter tries 0)
+  (format t "The computer has guessed a number between 1 and 100 ~%")
+  (play-game))
+
+(defun play-game ()
+  (format t "Enter a number between 1 and 100:  ")
+  (incf tries)
+  (let ((guess (read)))
+    (cond
+      ((= number guess)
+       (format t "You guessed the number! It took you ~a tries.~%" tries))
+      ((> number guess)
+       (format t "Your guess was too small.~%")
+       (play-game))
+      ((< number guess)
+       (format t "Your guess was too big.~%")
+       (play-game)))))
+\end{lstlisting}
 
 \end{document}

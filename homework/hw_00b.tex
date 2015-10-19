@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[top=1in]{geometry}
 \usepackage{listings}
 \usepackage{multicol}
 
@@ -10,7 +11,10 @@
 \maketitle{}
 \lstset{language=Lisp}
 
-\paragraph{}Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores six Lisp functions, =, /=, \textgreater, \textgreater=, \textless, and \textless=. Write down each result and see if you can figure out what each one does. Some will create errors.\\
+Invoke clisp and type the following commands. Remember, a `:q' (COLON QUE), `:a' (COLON AIGH), CONTROL-BREAK, or CONTROL-C will restore the top level prompt if you make a mistake. This explores six Lisp functions, =, /=, \textgreater, \textgreater=, \textless, and \textless=. Write down each result and see if you can figure out what each one does. Some will create errors.
+
+These are all functions, and they all return either TRUE or FALSE. In Common Lisp, TRUE is represented by ``\texttt{T}'', and FALSE is represented either by ``\texttt{NIL}'' or by () -- an empty set of parentheses. \textit{Important}: in logic, the truth or falsity of a statement is many times of critical importance. Make sure you understand \textit{why} these commands evaluate to TRUE or FALSE.
+
 
 \begin{multicols}{2}
 \begin{lstlisting}
