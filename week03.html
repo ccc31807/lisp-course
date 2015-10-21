@@ -5,7 +5,7 @@
     </head>    
     <body>
 
-        <p><a href="index.html">Return to course home</a></p>
+        <p><a href="index.html#curriculum">Return to course home</a></p>
 
         <h1>Programming Lisp Course Page - Week 3</h1>
 
@@ -15,6 +15,8 @@
             
             <p>This chapter has a lot of material, and you will have to read it many times over a period of months to really understand it. Just read it for now, you don't need to study it or try to understand it all. You will come to understand most of it in the next few months, and you can come back and read it again.</p>
 
+        <h3>Questions from reading</h3>
+
         <ol>
             <li>What is language syntax? This is true for all languages, whether English, Hindu, Java, or Lisp.</li>
             <li>What is language semantics? This is also true with human languages and computer languages.</li>
@@ -22,8 +24,54 @@
             <li>What are numbers?</li>
             <li>What are strings?</li>
             <li>What are cons cells? There is a direct relation between a computer's memory and CPU (central processing unit). A CPU contains registers, and in older computers, two of them were sometimes known as the `address register' and the `decrement register.' These registers read from memory and wrote to memory. When the CPU processed data, it processed what was called the `contents of address register' or `contests of decrement register.' The Contents of the Address Register was referred to as CAR, and the Contents of the Decrement Register was referred to as CDR. When you thing about <code>(car x)</code> and <code>(cdr y)</code>, you can think about the contents of these memory locations going into the CPU to be processed by the computer.</li>
-
         </ol>
+
+        <h3>Exercises</h3>
+
+        <p>The following exercises are not difficult, but they require careful thought. If you are not used to careful thought, you may find that this takes some effort, but still this is not conceptually difficult. The purpose of these exercises is to cement in your mind the concept of lists, and how you access individual members of lists. <spani style="color: red; font-style: italic">These exercises are extremely important!</span> You should take the time to do these.</p>
+
+        <h4>Create a list of lists</h4>
+
+        <p>Suppose you have a variable named <span style="font-weight: 700; font-family: monospace">X</span>, which is bound to a list. The list has three elements, each of which is another list of three atoms, like this:</br />
+        <code>(defparameter x '((ann beth carol) (dan ed frank) (gopher hyena ibex)))</code><br />
+        so that <code>X</code> looks like this:<br />
+        ((ANN BETH CAROL) (DAN ED FRANK) (GOPHER HYENA IBEX))<br />
+        Your assignment is to pick out each element one by one, so you can access ANN, BETH, CAROL, DAN, ED, FRANK, GOPHER, HYENA, and IBEX. I will show you four ways to do this.
+
+        <h4>1. <tt>car, cdr, and friends</tt></h4>
+
+        ANN is the <tt>car</tt> of the <tt>car</tt>, so <tt>(caar x)</tt> returns ANN.<br />
+        DAN is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt>, so <tt>(caadr x)</tt> returns DAN.<br /> 
+        GOPHER is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt> of the <tt>cdr</tt>, so <tt>(caaddr x)</tt> returns GOPHER.<br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You may not be able to do the last two.
+
+        <h4>2. <tt>first, second, and third</tt></h4>
+
+        Common Lisp defines functions <tt>first</tt> through <tt>ninth</tt>, which you will find very useful. Be sure to evaluate the INNER function call before the OUTER function call. This is also true for the next two exercises.<br />
+        AND is <tt>(first (first x)).</tt><br />
+        DAN is <tt>(first (second x)).</tt><br />
+        GOPHER is <tt>(first (third x)).</tt><br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You will find this very easy.
+
+        <h4>3. <tt>nth</tt></h4>
+
+        <tt>nth</tt> is named after the "nth" number, as in "five-th" (fifth), "seven-th" (seventh). and "nine-th" (ninth). Numbering begins at the "zero-th" element, so the first element is 0 -- not 1.<br />
+        ANN is the <tt>(nth 0 (nth 0 x)).</tt><br />
+        DAN is the <tt>(nth 0 (nth 1 x)).</tt><br />
+        GOHER is the <tt>(nth 0 (nth 2 x)).</tt><br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You will find this very easy.
+
+        <h4>4. <tt>elt</tt></h4>
+
+        <tt>elt</tt> is named for "element," referring to the number of the element you want, beginning at zero. It's very much like <tt>nth</tt>, but the order of the arguments is backward.<br />
+        ANN is the <tt>(elt (elt x 0) 0).</tt><br />
+        DAN is the <tt>(elt (elt x 0) 1).</tt><br />
+        GOPHER is the <tt>(elt (elt x 2) 0).</tt><br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You will find this very easy.
+
+
+
+
 
         <h3>Homework</h3>
 
@@ -34,6 +82,6 @@
                 <li><a href="homework/hw_03d.pdf">homework/hw_03d.pdf</a></li>
              <ol>
 
-             <p><a href="index.html">Return to course home</a></p>
+             <p><a href="index.html#curriculum">Return to course home</a></p>
     </body>
 </html>
