@@ -1,0 +1,102 @@
+Programming as a tool to get a job done
+software development cycle
+ - analysis
+ - design
+ - implementation
+ - testing
+using a text editor to write a source listing
+executing a source isting
+ - interpreter
+ - compiler
+deigning programs
+ - input variables
+ - processing variables
+ - output variables
+program structures
+ - sequence
+ - repetition
+ - selection
+programming paradigms
+ - procedural programming (also, structured and imperatuve)
+ - object oriented programming
+ - function al programming
+ - others: declarative, logic, concurrent, aspect, etc.
+data types
+ - integer (short, long)
+ - floats (single, double)
+ - char
+ - string
+ - Boolean 
+blocks of code
+ - procedures
+ - function
+ - methods
+ - anonymous (lambda) functions
+variables, attributes of
+ - name
+ - place
+ - value
+ - type
+ - scope
+ - lifetime
+ - namespace
+data structures
+ - lists
+ - arrays
+ - hashes
+ - structs
+ - objects
+logical structures
+ - graphs
+ - trees
+ - graph traversal
+ - abstract syntax trees (Lisp code)
+outside connections
+ - input and output streams
+ - sockets and ports
+ - files
+domain specific languages
+ - dot language
+ - SVG
+ - loop
+ - format (printf, sprintf)
+ - others (HTML, CSS, XML, SQL)
+artificial intelligence
+ - wumpus
+ - genetic and evolutional algorithms
+ - alpha/beta
+ - tree traversal
+data visualization
+web server
+Life Lessions
+ - learn by doing
+ - importance of failure
+What next?
+ - C (as close to the machine as you can get outside of assembly language)
+ - Python (very popular with young guys)
+ - JavaScript (web based, h7ypertext, and mobile)
+ - Erlang (all around weird stuff, but good)
+Common Lisp
+ - reread 'Land of Lisp'
+ - Peter Seibel 'Practical Common Lisp' (free)
+ - Peter Touretzky 'A Gentle Guide to Symbolic Computation' (free)
+Good things to have
+ - HTML
+ - CSS
+ - JavaScript
+ - SQL
+ - vi/Vim
+Programming as a tool to get a job done
+
+Evaluation:
+What one thing did you enjoy most about the class?
+What one thing did you hate most about the class?
+What one thing did we skip that you wanted to do?
+What one thing did we do that you wished we didn't?
+Was the class a good use of time, or a waste of time?
+Would you suggest other students take a class like this? Why?
+Rate the book in three sentences.
+Rate the instructor in three sentences.
+
+
+It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat.

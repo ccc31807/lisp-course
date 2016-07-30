@@ -1,0 +1,17 @@
+body {            
+    font-family: sans-serif;
+    margin: 36px 36px;
+    background-color: #fcfcfc;
+    color: #000033;
+    font-size: 11pt;
+    border: 1px solid #000033;
+    padding: 36px;
+}
+*.code {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 1px 16px;
+}
+span.date {
+    font-size: 6pt;
+}

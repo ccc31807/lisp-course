@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Lisp Programming Course - Week 4</title>
+        <link href="lisp.css" rel="stylesheet" type="text/css" />
+    </head>    
+    <body>
+
+        <p><a href="index.html">Return to course home</a></p>
+
+        <h1>Programming Lisp Course Page - Week 4</h1>
+
+        <h3>Read <i>Land of Lisp</i>, pages 49 through 66.</h3>
+
+        <p>While you are reading, you should be sitting at your computer and running the examples in the book. See if you can figure out how they work and what they do.</p>
+            
+        <p>In a computer program, there are three, and only three, things the program can do. They are: (a) sequence, (b) repetition, and (c) selection. <b>Sequence</b> means following steps one at a time, for instance, getting ready in the morning. You wake up, get a shower, get dressed, eat breakfast, and so on. It doesn't make sense to alter the order of the steps, for instance, to eat breakfast before you wake up or take a shower after you get dressed. <b>Repetition</b> means doing the same thing over and over again. We caw this in the math test in week 1, where we repeated the process of creating addition problems over and over. <b>Selection</b> means making decisions. This week's topic is decision making.</p>
+
+        <p>Chapter 4 covers many selection functions. As a matter of practice, the only one I use regularly is <code>(cond)</code>. I never use <code>(when)</code>, <code>(unless)</code>, <code>(case)</code>, or <code>(ecase)</code>, which your book does not discuss. I sometimes use <code>(if)</code> if it makes the code clearer.</p>
+
+        <p>As to<code>(and)</code> and <code>(or)</code>, these are important, but I rarely if ever use them for decision making as it is presented here. Consider this: &quot;if the weather is nice and the game is less than a mile, I will walk to the game&quot;, and &quot;if it's raining I will take a rain coat or an umbrella.&quot; &apos;and&apos; and &apos;or&apos; are both very important, but their use is usually obvious. You should notice that OR is what we call the INCLUSIVE OR, that is, taking a raincoat does not mean that you cannot take an umbrella as well. We also have the EXCLUSIVE OR, either one or the other but not both -- flying on Delta or USAir does not mean you can use both airlines. In programming <u>most of the time you will use the INCLUSIVE OR</u>, and you need to be aware of this.</p>
+
+        <p>Your main take away from chapter 4 should be <code>(cond)</code>. If you know what the others look like and how they work, you can decide for yourself when and where to use them.</p>
+
+        <h3>Homework</h3>
+
+            <ol>
+                <li><a href="homework/hw_04a.pdf">homework/hw_04a.pdf</a></li>
+                <li><a href="homework/hw_04b.pdf">homework/hw_04b.pdf</a></li>
+                <li><a href="homework/hw_04c.pdf">homework/hw_04c.pdf</a></li>
+                <li><a href="homework/hw_04c.pdf">homework/hw_04d.pdf</a></li>
+             <ol>
+
+             <p><a href="index.html">Return to course home</a></p>
+    </body>
+</html>

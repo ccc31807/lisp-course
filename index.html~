@@ -1,0 +1,225 @@
+<html>
+    <head>
+        <title>Lisp Programming Course</title>
+        <link href="lisp.css" rel="stylesheet" type="text/css" />
+        <style>
+            td { padding: 3 12; }
+        </style>
+    </head>    
+    <body>
+        <h1 style="text-align: center">Programming with Common Lisp</h1>
+        <h2 style="text-align: center; font-style: italic; color: red">Learn to program by writing games!</h2>
+        <h3>2016 - 2017 school year</h3>
+        <h2>General Information</h2>
+
+        <h3>Course Objectives</h3>
+        <p>
+            <ul>
+                <li>The ability to write a program, compile it into executable code, and run it on a computer,</li>
+                <li>The ability to decide the program requirements, design the program, implement the program, and test it to see if it does what it was designed to do, and</li>
+                <li>Perhaps the most important, have fun creating, designing, and building things that other people can enjoy!</li>
+            </ul>  
+        </p>
+
+        <h3>Cost and Requirements</h3>
+        <ul>
+            <li>There is no monetary cost for the course, it is offered free of charge.</li>
+            <li>Students must have a laptop for class labs and homework. The requirements (memory, processor, operating system) are extremely modest. Since students will be writing and compiling programs, they will need a "real" computer -- a Chromebook or handheld device will not be sufficient.</li>
+            <li>The book is required, but it can be purchased for a modest amount.</li>
+        </ul>
+
+        <h3>Text</h3>
+        <p>Book: <i>Land of Lisp </i> by Conrad Barski, ISBM: 978-1-59327-281-4. <a href="http://landoflisp.com" target='_blank'>Link to book web site</a>. <a href="http://nostarch.com/lisp.htm" target='_blank'>Link to publisher's web site</a>. This book is currently available from $9.50 used and $34.57 new (as of July, 2016) from <a href='http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Dstripbooks&field-keywords=land+of+lisp' target='_blank'>Amazon.com</a>.</p>
+
+        <img src="lisp.png" alt="Land of Lisp by Conrad Barski" />
+
+        <h3>Instructor</h3>
+        <ul>
+            <li>Charles Carter</li>
+            <li>Phone: 706-662-6351 (cell, please do not call me on my cell phone except in an emergency)</li>
+            <li>Email: ccc31807@yahoo.com (preferred)</li>
+        </ul>
+
+        <h3>Class meetings</h3>
+		<p>Classes will tentatively meet from 8:00 a.m. to 9:00 a.m., Friday, beginning September 2, 2016 (Friday). The meeting place is at Troy University, Columbus location (506 Manchester Expressway, Suite B-20). <a href="TroyUniversityColumbusMap.pdf" target="_blank">Here is a map (PDF).</a></p>
+
+        <h3>Schedule</h3>
+		<p>The tentative schedule can be found <a href="schedule2016.csv" id="schedule" target="_blank">here as a CSV file</a> or <a href="schedule2016.html" id="schedule" target="_blank">here as an HTMLfile</a>  .<p>
+
+        <!--
+        <td><span class="date">10-18-13</span><b><a href="week0.html">Week 0</a></b><img src="checkmark_sm.gif" float="left" /><td/>
+        -->
+        <a id="curriculum" />
+        <h2>Curriculum</h2>
+        <table>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week00.html" style="font-weight: 600;">Week 0</a><br />
+            <span class="date">No pages assigned</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week01.html" style="font-weight: 600;">Week 1</a><br />
+            <span class="date">pages 1 - 14</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week02.html" style="font-weight: 600;">Week 2</a><br />
+            <span class="date">pages 15 - 30</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week03.html" style="font-weight: 600;">Week 3</a><br />
+            <span class="date">pages 31 - 45</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week04.html" style="font-weight: 600;">Week 4</a><br />
+            <span class="date">pages 49 - 66</span></td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week05.html" style="font-weight: 600;">Week 5</a><br />
+            <span class="date">pages 67 - 84</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week06.html" style="font-weight: 600;">Week 6</a><br />
+            <span class="date">pages 85 - 102</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week07.html" style="font-weight: 600;">Week 7</a><br />
+            <span class="date">pages 103 - 114</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week08.html" style="font-weight: 600;">Week 8</a><br />
+            <span class="date">pages 114 - 129</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week09.html" style="font-weight: 600;">Week 9</a><br />
+            <span class="date">pages 129 - 146</span></td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week10.html" style="font-weight: 600;">Week 10</a><br />
+            <span class="date">pages 146 - 152</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week11.html" style="font-weight: 600;">Week 11</a><br />
+            <span class="date">pages 153 - 173</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week12.html" style="font-weight: 600;">Week 12</a><br />
+            <span class="date">pages 172 - 192</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week13.html" style="font-weight: 600;">Week 13</a><br />
+            <span class="date">pages 192 - 220</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week14.html" style="font-weight: 600;">Week 14</a><br />
+            <span class="date">cipher</span></td>
+            </tr>
+            <tr>
+        <td colspan="5" style="text-align: center; background-color: #ccffcc; color: #aa6666;">Christmas Break</td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week15.html" style="font-weight: 600;">Week 15</a><br />
+            <span class="date">pages 221 - 236</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week16.html" style="font-weight: 600;">Week 16</a><br />
+            <span class="date">pages 237 - 252</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week17.html" style="font-weight: 600;">Week 17</a><br />
+            <span class="date">pages 253 - 267</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week18.html" style="font-weight: 600;">Week 18</a><br />
+            <span class="date">pages 291 - 302</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week19.html" style="font-weight: 600;">Week 19</a><br />
+            <span class="date">pages 303 - 321</span></td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week20.html" style="font-weight: 600;">Week 20</a><br />
+            <span class="date">pages 321 - 339</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week21.html" style="font-weight: 600;">Week 21</a><br />
+            <span class="date">pages 339 - 354</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week22.html" style="font-weight: 600;">Week 22</a><br />
+            <span class="date">pages 355 - 364</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week23.html" style="font-weight: 600;">Week 23</a><br />
+            <span class="date">pages 365 - 374</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week24.html" style="font-weight: 600;">Week 24</a><br />
+            <span class="date">pages 375 - 384</span></td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week25.html" style="font-weight: 600;">Week 25</a><br />
+            <span class="date">pages 384 - 393</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week26.html" style="font-weight: 600;">Week 26</a><br />
+            <span class="date">pages 393 - 400</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week27.html" style="font-weight: 600;">Week 27</a><br />
+            <span class="date">pages 401 - 408</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week28.html" style="font-weight: 600;">Week 28</a><br />
+            <span class="date">pages 408 - 415</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week29.html" style="font-weight: 600;">Week 29</a><br />
+            <span class="date">417 - 423</span></td>
+            </tr>
+            <tr>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week30.html" style="font-weight: 600;">Week 30</a><br />
+            <span class="date">pages 423 - 426</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            <a href="week31.html" style="font-weight: 600;">Week 31</a><br />
+            <span class="date">class review (last day)</span></td>
+        <td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+            </td>
+        <td>
+            </td>
+            <!-- <img src='check.png' height='24pt' width='24pt' /> -->
+        <td>
+            </td>
+            </tr>
+            <tr>
+        <td colspan="5" style="text-align: center; background-color: #ccffcc; color: #aa6666;">Congratulations, you have just learned your first programming language!</td> </tr> </table> <h2>Lisp programs</h2> <ul> <li><a href="http://landoflisp.com/source.html">Barski's Lisp code at http://landoflisp.com/source.html</a></li> <li><a href="lispcode/add-test.lisp">add-test.lisp</a></li>
+            <li><a href="lispcode/hi.lisp" target="_blank">hi.lisp</a></li>
+            <li><a href="lispcode/guess.lisp" target="_blank">guess.lisp</a></li>
+            <li><a href="lispcode/my-guess.lisp" target="_blank">my-guess.lisp</a></li>
+            <li><a href="lispcode/tester.lisp" target="_blank">tester.lisp</a></li>
+            <li><a href="lispcode/testerA.lisp" target="_blank">testerA.lisp</a></li>
+            <li><a href="lispcode/testerB.lisp" target="_blank">testerB.lisp</a></li>
+            <li><a href="lispcode/testerC.lisp" target="_blank">testerC.lisp</a></li>
+            <li><a href="lispcode/testerD.lisp" target="_blank">testerD.lisp</a></li>
+            <li><a href="lispcode/wizards-game.lisp" target="_blank">wizards-game.lisp</a></li>
+            <li><a href="lispcode/wiz-1.lisp" target="_blank">wiz-1.lisp</a></li>
+            <li><a href="lispcode/wiz-2.lisp" target="_blank">wiz-2.lisp</a></li>
+            <li><a href="lispcode/cipher.lisp" target="_blank">cipher.lisp</a></li>
+            <li><a href="lispcode/trace-test.lisp" target="_blank">trace-test.lisp</a></li>
+        </ul>
+    </body>
+</html>
