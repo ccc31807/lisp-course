@@ -5,6 +5,7 @@
 (defun start-test ()
   (defparameter number-of-questions 10)
   (defparameter number-correct 0)
+  (defparameter question-counter 1)
   (format t "Starting the addition test, you have ~a questions.~%" number-of-questions)
   (run-test))
 
@@ -23,8 +24,9 @@
     (cond 
       ((zerop number-of-questions)
        (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
-      (t (format t "Question ~a. " number-of-questions)
+      (t (format t "Question ~a. " question-counter)
          (decf number-of-questions)
          (incf number-correct (addition-problem))
+		 (incf question-counter)
          (run-test))))
 
