@@ -14,15 +14,19 @@ The software development process has four steps. This week's homework will walk 
 
 The purpose of implementation is to write the software using the design. I have copied a simple addition test program below. Copy this into a file named ``add-test.lisp'', load it into your clisp environment, and run it.
 
-You do not have to know what this does. This short code has six variables. You should understand what each variable does. They are: number-of-questions, number-correct, a, b, c, and d. Do an internet search for ``common lisp function defparameter'' and ``common lisp function let.''
+You do not have to know what this does. This short code has seven variables. You should understand what each variable does. They are: number-of-questions, number-correct, question-counter, a, b, c, and d. Do an internet search for ``common lisp function defparameter'' and ``common lisp function let.''
 
 \lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
 \begin{lstlisting}
+;;;add-test.lisp
+
+(print "This is add-lisp. Evaluate (start-test) to start the test.")
+
 (defun start-test ()
   (defparameter number-of-questions 10)
   (defparameter number-correct 0)
-  (format t "Starting the addition test, you have ~a questions.~%" 
-    number-of-questions)
+  (defparameter question-counter 1)
+  (format t "Starting the addition test, you have ~a questions.~%" number-of-questions)
   (run-test))
 
 (defun addition-problem ()
@@ -39,11 +43,11 @@ You do not have to know what this does. This short code has six variables. You s
 (defun run-test ()
     (cond 
       ((zerop number-of-questions)
-       (format t "You got ~a correct and made a ~a.~%" 
-        number-correct (* 100 (/ number-correct 10.0))))
-      (t (format t "Question ~a. " number-of-questions)
+       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
+      (t (format t "Question ~a. " question-counter)
          (decf number-of-questions)
          (incf number-correct (addition-problem))
+		 (incf question-counter)
          (run-test))))
 \end{lstlisting}
 
