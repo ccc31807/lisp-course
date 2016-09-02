@@ -11,6 +11,8 @@
 
         <h3>Read <i>Land of Lisp</i>, pages 1 through 14.</h3>
 
+        <p>This week's reading is the introduction to Barski's <i>Land of Lisp</i>. It contains background information on computer languages in general, and Lisp in particular. Read this chapter and answer these questions.</p>
+
         <ol>
             <li>Who invented Lisp? (page 6)</li>
             <li>When did he invent Lisp? (page 6)</li>
@@ -20,6 +22,14 @@
 			<li>What is <i>artificial intelligence</i>? (find your own answer)</li>
         </ol>
 
+        <p>This week, we will cover the process of writing software and write a computer program. Writing a program can be divided into several phases, and I will break this down into four phases -- analysis, design, implementation, and testing. <i>Analysis</i> consists of figuring out what you want the program to actually do, and results in a <i>specification document</i>. This specification document describes in detail what tasks the program should perform if it is working properly. <i>Design</i> consists of creating a plan for writing the software, much like a blueprint is a plan for building a house, and results in a <i>design document</i>. <i>Implementation</i> consists of actually writing the code, what most people mean when they think about programming, and results in <i>source code</i>. <i>Testing</i> consists of running the program to see if it does what it is supposed to do, which means that the output of the program is compared to the <i>specification document</i>. If the output of the program matches the specification, the program is correct.</p>
+
+        <p>In practice, programs rarely pass the tests, or programs pass the test but the specification is incorrect. As a practical matter, this process of <i>analysis-design-implementation-testing</i> is repeated many times, tens or hundreds or even thousands of times. Often, it turns out that a proper specification cannot be written (because no one can figure out what the program is actually supposed to do) or the test cannot be successfully completed (because no one can figure out how to actually do whatever it is that the program should do), so the project is terminated.</p>
+
+        <p>The point of this week's exercise is not to teach a program language (although you will learn a little about Common Lisp), but to teach the <i>process</i> of writing software. It's very, very important that you pay attention to the steps you use in writing software, and to make sure that you understand the <i>analysis-design-implementation-testing</i> process.</p>
+
+        <p>The DOS command to copy a file is <code class="code">copy source target</code>. If I had a file named "add-test-1.lisp" and wanted to copy it to a file named "add-test-2.lisp" so I could create a new program by changing the old one, I would give the command <code class="code">copy "add-test-1.lisp" "add-test-2.lisp"</code>. This would create the new file, which I could then open and edit.</p>
+        
         <h3>Homework</h3>
 
             <p>To EXIT from clisp, enter <code class="code">(quit)</code>. This is the word &apos;QUIT&apos; inside a pair of parentheses.</p>
