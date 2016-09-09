@@ -5,40 +5,52 @@
 \usepackage{url}
 
 \title{Homework, Week 3, part B}
-\date{October 31, 2013}
+\author{lightprogramming.org}
+\date{\today}
 
 \begin{document}
 \maketitle{}
 
-\paragraph{}This assignment uses the list you wrote yesterday. Write a function. Name it \texttt{(list-answers)}. It will take as an argument a list of answers, like this: \texttt{("George Washington" "John Adams" "Thomas Jefferson" "James Madison")}. It will list the answers randomly, that is, it will not list them in order. If the first answer is always the correct answer, it would not do much good on a test to always list the right answer first.
+This assignment uses the list you wrote yesterday. Write a function. Name it \texttt{(list-answers)}. It will take as an argument a list of answers, like this: \texttt{("George Washington" "John Adams" "Thomas Jefferson" "James Madison")}. It will list the answers randomly, that is, it will not list them in order. If the first answer is always the correct answer, it would not do much good on a test to always list the right answer first.
 
-\paragraph{}There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language.
-
-\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
-\begin{lstlisting}
-;;my output
-[174]> (defparameter answers (cadr (nth 4 items)))
-ANSWERS
-[175]> answers
-("Ron Reagan" "Richard Nixon" "John Kennedy" "Harry Truman")
-[176]> (list-answers answers)
-    Harry Truman
-    Richard Nixon
-    Ronald Reagan
-    John Kennedy
-NIL
-\end{lstlisting}
+There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language.
 
 \lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
-\begin{lstlisting}
+\begin{lstlisting}[caption = My function]
 ;;my function
 (defun list-answers (answers)
   (cond
     ((null answers) nil)
     (t (let* ((len (length answers))
-             (num (random len)))
+              (num (random len)))
          (format t "    ~a~%" (nth num answers))
          (list-answers (remove (nth num answers) answers))))))
+\end{lstlisting}
+
+I have added the function to the previous file, which is named \texttt{test-q-answers.lisp}. After you load the file, you can test the function, See the output below.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}[caption = My output]
+;;my output
+[37]> (load "test-q-answers.lisp")
+;; Loading file test-q-answers.lisp ...
+;; Loaded file test-q-answers.lisp
+T
+[38]> (car (cdr (nth 0 items)))
+("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama")
+[39]> (list-answers (car (cdr (nth 0 items))))
+    Barack Obama
+    John Adams
+    Thomas Jefferson
+    George Washington
+NIL
+[40]> (list-answers (car (cdr (nth 1 items))))
+    Thomas Jefferson
+    Barack Obama
+    John Adams
+    George Washington
+NIL
+[41]>
 \end{lstlisting}
 
 \end{document}

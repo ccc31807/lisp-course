@@ -5,38 +5,69 @@
 \usepackage{url}
 
 \title{Homework, Week 3, part C}
-\date{October 31, 2013}
+\author{lightprogramming.org}
+\date{\today}
 
 \begin{document}
 \maketitle{}
 
-\paragraph{}This assignment uses the list you wrote previously. Write a function. Name it \texttt{(ask-question)}. It will take as an argument a list of a question and answers, like this: \texttt{("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))}. It will ask the question and then list the answers, as before.
+This assignment uses the list you wrote previously. Write a function. Name it \texttt{(ask-question)}. It will take as an argument a list of a question and answers, like this: \texttt{("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))}. It will ask the question and then list the answers, as before.
 
-\paragraph{}There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language.
-
-\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
-\begin{lstlisting}
-;;my output
-[184]> (defparameter q-and-a a)
-Q-AND-A
-[185]> q-and-a
-("Who was the first president of the United States?" ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))
-[186]> (ask-question q-and-a)
-
-Who was the first president of the United States?
-    Thomas Jefferson
-    George Washington
-    Barack Obama
-    John Adams
-NIL
-\end{lstlisting}
+There are many ways to do this. My answer is below. I do not expect you to write this by yourself, because you have not had all you need. I do expect you to think about it, and write what you can in plain English as if a computer could understand it. Write down all the steps. This is very important. If you can't think through all the steps and write them in English, you cannot think through all the steps and write them in Lisp, or in any other language.
 
 \lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
-\begin{lstlisting}
+\begin{lstlisting}[caption = My function]
 ;;my function
 (defun ask-question (item)
   (format t "~%~a~%" (car item))
-  (list-answers (cadr item)))
+  (list-answers (car (cdr item))))
+\end{lstlisting}
+
+I added this to the previous file, and named the new file \texttt{test-ques-answers.lisp}. Load the new file, and call the new \texttt{ask-question} function. I asked the same question several times, and you will notice that the order of the answers changed.
+
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+\begin{lstlisting}[captionb = My output]
+;;my output
+[41]> (load "test-ques-answers.lisp")
+;; Loading file test-ques-answers.lisp ...
+;; Loaded file test-ques-answers.lisp
+T
+[42]> a
+("Who was the first president of the United States?"
+ ("George Washington" "John Adams" "Thomas Jefferson" "Barack Obama"))
+[43]> (ask-question a)
+
+Who was the first president of the United States?
+    George Washington
+    Thomas Jefferson
+    John Adams
+    Barack Obama
+NIL
+[44]> (ask-question a)
+
+Who was the first president of the United States?
+    John Adams
+    George Washington
+    Barack Obama
+    Thomas Jefferson
+NIL
+[45]> (ask-question a)
+
+Who was the first president of the United States?
+    John Adams
+    Barack Obama
+    George Washington
+    Thomas Jefferson
+NIL
+[46]> (ask-question a)
+
+Who was the first president of the United States?
+    George Washington
+    John Adams
+    Barack Obama
+    Thomas Jefferson
+NIL
+[47]>
 \end{lstlisting}
 
 \end{document}

@@ -23,7 +23,8 @@
 (defun run-test ()
     (cond 
       ((zerop number-of-questions)
-       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
+       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0)))
+       T)
       (t (format t "Question ~a. " question-counter)
          (decf number-of-questions)
          (incf number-correct (addition-problem))

@@ -36,14 +36,14 @@
         <code>(defparameter x '((ann beth carol) (dan ed frank) (gopher hyena ibex)))</code><br />
         so that <code>X</code> looks like this:<br />
         ((ANN BETH CAROL) (DAN ED FRANK) (GOPHER HYENA IBEX))<br />
-        Your assignment is to pick out each element one by one, so you can access ANN, BETH, CAROL, DAN, ED, FRANK, GOPHER, HYENA, and IBEX. I will show you four ways to do this.
+        Your assignment is to pick out each element one by one, so you can access ANN, BETH, CAROL, DAN, ED, FRANK, GOPHER, HYENA, and IBEX. This is a challange, it's hard to do.
 
-        <h4>1. <tt>car, cdr, and friends</tt></h4>
+        <h4>1. <tt>car and cdr</tt></h4>
 
-        ANN is the <tt>car</tt> of the <tt>car</tt>, so <tt>(caar x)</tt> returns ANN.<br />
-        DAN is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt>, so <tt>(caadr x)</tt> returns DAN.<br /> 
-        GOPHER is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt> of the <tt>cdr</tt>, so <tt>(caaddr x)</tt> returns GOPHER.<br />
-        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You may not be able to do the last two.
+        ANN is the <tt>car</tt> of the <tt>car</tt>, so <tt>(car (car x))</tt> returns ANN.<br />
+        DAN is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt>, so <tt>(car (cdr (car x)))</tt> returns DAN.<br /> 
+        GOPHER is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt> of the <tt>cdr</tt>, so <tt>(car (car (cdr (cdr x))))</tt> returns GOPHER.<br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. I'll give you a hint about making this easier --- I'll show you how to do <b>ibex</b>, which is that hardest one. First, pick out the third list: <tt>(car (cdr (cdr x)))</tt> will do this.  Second, assign the third list to a variable, call it <tt>x3</tt>, like this: <tt>(setf x3 (car (cdr (cdr x)))}</tt>. Finally, pick out the third element of <tt>x3</tt>, like this: <tt>(car (cdr (cdr x3)))</tt>.
 
         <h4>2. <tt>first, second, and third</tt></h4>
 
@@ -76,10 +76,10 @@
         <h3>Homework</h3>
 
             <ol>
-                <li><a href="homework/hw_03a.pdf">homework/hw_03a.pdf</a></li>
-                <li><a href="homework/hw_03b.pdf">homework/hw_03b.pdf</a></li>
-                <li><a href="homework/hw_03c.pdf">homework/hw_03c.pdf</a></li>
-                <li><a href="homework/hw_03d.pdf">homework/hw_03d.pdf</a></li>
+                <li><a href="homework/hw_03a.pdf" target="_blank">homework/hw_03a.pdf</a></li>
+                <li><a href="homework/hw_03b.pdf" target="_blank">homework/hw_03b.pdf</a></li>
+                <li><a href="homework/hw_03c.pdf" target="_blank">homework/hw_03c.pdf</a></li>
+                <li><a href="homework/hw_03d.pdf" target="_blank">homework/hw_03d.pdf</a></li>
              <ol>
 
              <p><a href="index.html#curriculum">Return to course home</a></p>

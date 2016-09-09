@@ -5,14 +5,15 @@
 \usepackage{multicol}
 
 \title{Homework, Week 1, part B}
-\date{October 17, 2013}
+\author{lightprogramming.org}
+\date{\today}
 
 \begin{document}
 \maketitle{}
 
 The software development process has four steps. This week's homework will walk you through all four steps. The steps are: (1) analysis, (2) design, (3) implementation, and (4) testing. The process repeats all four steps, one after another, many times before the software is complete.
 
-The purpose of implementation is to write the software using the design. I have copied a simple addition test program below. Copy this into a file named ``add-test.lisp'', load it into your clisp environment, and run it.
+The purpose of implementation is to write the software using the design. I have written a simple addition test program below. Copy this into a file named ``add-test.lisp'', load it into your clisp environment, and run it.
 
 You do not have to know what this does. This short code has seven variables. You should understand what each variable does. They are: number-of-questions, number-correct, question-counter, a, b, c, and d. Do an internet search for ``common lisp function defparameter'' and ``common lisp function let.''
 
@@ -43,7 +44,8 @@ You do not have to know what this does. This short code has seven variables. You
 (defun run-test ()
     (cond 
       ((zerop number-of-questions)
-       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
+       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0)))
+       T)
       (t (format t "Question ~a. " question-counter)
          (decf number-of-questions)
          (incf number-correct (addition-problem))
@@ -52,5 +54,8 @@ You do not have to know what this does. This short code has seven variables. You
 \end{lstlisting}
 
 \paragraph{Testing}Load this file into your lisp with \texttt{(load "add-test.lisp")} and evaluate \texttt{(start-test)}. Does it do what it is supposed to do? Does it meet all the requirements you identified? Does it do anything that you did not identify as a requirement?
+
+
+\paragraph{Answers}Ordinarily, you should always give your variables and functions understandable, English-like names. I have done this with the main parts: start-test, run-test, and addition-problem. What these do should be completely evident from their names. I have given three of the variables the same kind of name: number-of-questions, number-correct, and question-counter. Again, the values these contain should be completely evident. I have violated this rule with the variables named a, b, c, and d. The reason is that they are set and used in a compact piece of code so that, again, what they do should be completely evident. Variables a and b are the two numbers to be added; c is the sum of a and b; and d is the answer supplied by the student. By now, you have already seen \texttt{random} and \texttt{+}. The \texttt{read} function reads a number from the keyboard, and ``returns'' it to the calling function, exactly like \texttt{random} and \texttt{+}. These two also ``return'' a value to the calling function. The ``calling function'' is \texttt{let}.
 
 \end{document}

@@ -14,12 +14,12 @@
         <p>While you are reading, you should be sitting at your computer and running the examples in the book. See if you can figure out how they work and what they do.</p>
 
         <ol>
-            <li>What is a variable?</li>
-            <li>What is a global variable?</li>
-            <li>What is a lexical (local) variable?</li>
-            <li>What is a function?</li>
-            <li>What is a global function?</li>
-            <li>What is a lexical (local) function?</li>
+            <li>What is a variable? (see below)</li>
+            <li>What is a global variable? (page 23)</li>
+            <li>What is a lexical (local) variable? (page 28)</li>
+            <li>What is a function? (see below)</li>
+            <li>What is a global function? (page 25)</li>
+            <li>What is a lexical (local) function? (page 28)</li>
             <li style="color: #ff0000;">Barski states on page 25 that ``Every command in Command Lisp generates a return value.'' What does this mean?</li>
         </ol>
 
@@ -56,6 +56,8 @@
     (format t "a is ~a, b is ~a, and they are equal")     ;THEN branch, indented directly under test
     (format t "a is ~a, b is ~a, and they are not equal"));ELSE branch, indented directly under test
         </pre>
+        
+        <p><b>Answers</b> A <i>variable</i> is a named piece of memory that holds a value. A <i>function</i> is a named block of code that (optionally) takes inputs and returns outputs. A Lisp command that <i>returns a value</i> means that, when the command completes its task, it gives some value back to the system. For example, an arithmetic command will give an answer, but a command to delete a variable would return either TRUE or FALSE, (or 1 or 0) depending on whether or not the variable was successfully deleted. That this is true for every command in Lisp is significant, and you should always remember it.</p>
 
         </p>
         <h3>Homework</h3>
@@ -67,6 +69,16 @@
                 <li><a href="homework/hw_02d.pdf" target="_blank">homework/hw_02d.pdf</a></li>
              <ol>
 
+     <h3>What we covered:</h3>
+
+     <ul>
+         <li>software process</li>
+         <li>variables</li>
+         <li>bisection algorithm</li>
+         <li>functions</li>
+     </ul>
+
              <p><a href="index.html#curriculum">Return to course home</a></p>
+
     </body>
 </html>

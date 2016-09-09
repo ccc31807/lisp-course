@@ -28,7 +28,7 @@
 
         <p>The point of this week's exercise is not to teach a program language (although you will learn a little about Common Lisp), but to teach the <i>process</i> of writing software. It's very, very important that you pay attention to the steps you use in writing software, and to make sure that you understand the <i>analysis-design-implementation-testing</i> process.</p>
 
-        <p>The DOS command to copy code is <code class="code">copy source target</code>. If I had a file named "add-test-1.lisp" and wanted to copy it to a file named "add-test-2.lisp" so I could create a new program by changing the old one, I would give the command <code class="code">copy "add-test-1.lisp" "add-test-2.lisp"</code>. This would create the new file, which I could then open and edit.</p>
+        <p>The DOS command to copy a file is <code class="code">copy source target</code>. If I had a file named "add-test-1.lisp" and wanted to copy it to a file named "add-test-2.lisp" so I could create a new program by changing the old one, I would give the command <code class="code">copy "add-test-1.lisp" "add-test-2.lisp"</code>. This would create the new file, which I could then open and edit.</p>
         
         <h3>Homework</h3>
 
@@ -40,6 +40,15 @@
                 <li><a href="homework/hw_01d.pdf" target="_blank">homework/hw_01d.pdf</a></li>
              <ol>
 
+            <h3>What we covered</h3>
+
+            <ul>
+                <li>Software process</li>
+                <li>Variables</li>
+            </ul>
+
              <p><a href="index.html#curriculum">Return to course home</a></p>
+             
     </body>
+
 </html>

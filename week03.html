@@ -26,6 +26,10 @@
             <li>What are cons cells? There is a direct relation between a computer's memory and CPU (central processing unit). A CPU contains registers, and in older computers, two of them were sometimes known as the `address register' and the `decrement register.' These registers read from memory and wrote to memory. When the CPU processed data, it processed what was called the `contents of address register' or `contests of decrement register.' The Contents of the Address Register was referred to as CAR, and the Contents of the Decrement Register was referred to as CDR. When you thing about <code>(car x)</code> and <code>(cdr y)</code>, you can think about the contents of these memory locations going into the CPU to be processed by the computer.</li>
         </ol>
 
+        <h3>Syntax versus semantics</h3>
+
+        <p>Consider this sentence: The boy saw the girl with the telescope. The <i>syntax</i> of this sentence is perfect as it obeys all the rules of English grammar. However, the <i>semantics</i> leaves a lot to be desired. What does the sentence mean? Who had the telescope, the boy or the girl? This illustrates that a statement in a human language (or a computer language) may be perfectly formed in accordance with the rules of the language, but have faulty semantics.</p>
+
         <h3>Exercises</h3>
 
         <p>The following exercises are not difficult, but they require careful thought. If you are not used to careful thought, you may find that this takes some effort, but still this is not conceptually difficult. The purpose of these exercises is to cement in your mind the concept of lists, and how you access individual members of lists. <spani style="color: red; font-style: italic">These exercises are extremely important!</span> You should take the time to do these.</p>
@@ -36,14 +40,14 @@
         <code>(defparameter x '((ann beth carol) (dan ed frank) (gopher hyena ibex)))</code><br />
         so that <code>X</code> looks like this:<br />
         ((ANN BETH CAROL) (DAN ED FRANK) (GOPHER HYENA IBEX))<br />
-        Your assignment is to pick out each element one by one, so you can access ANN, BETH, CAROL, DAN, ED, FRANK, GOPHER, HYENA, and IBEX. I will show you four ways to do this.
+        Your assignment is to pick out each element one by one, so you can access ANN, BETH, CAROL, DAN, ED, FRANK, GOPHER, HYENA, and IBEX. This is a challange, it's hard to do.
 
-        <h4>1. <tt>car, cdr, and friends</tt></h4>
+        <h4>1. <tt>car and cdr</tt></h4>
 
-        ANN is the <tt>car</tt> of the <tt>car</tt>, so <tt>(caar x)</tt> returns ANN.<br />
-        DAN is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt>, so <tt>(caadr x)</tt> returns DAN.<br /> 
-        GOPHER is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt> of the <tt>cdr</tt>, so <tt>(caaddr x)</tt> returns GOPHER.<br />
-        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. You may not be able to do the last two.
+        ANN is the <tt>car</tt> of the <tt>car</tt>, so <tt>(car (car x))</tt> returns ANN.<br />
+        DAN is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt>, so <tt>(car (cdr (car x)))</tt> returns DAN.<br /> 
+        GOPHER is the <tt>car</tt> of the <tt>car</tt> of the <tt>cdr</tt> of the <tt>cdr</tt>, so <tt>(car (car (cdr (cdr x))))</tt> returns GOPHER.<br />
+        Figure out BETH, CAROL, ED, FRANK, HYENA, AND IBEX. I'll give you a hint about making this easier --- I'll show you how to do <b>ibex</b>, which is that hardest one. First, pick out the third list: <tt>(car (cdr (cdr x)))</tt> will do this.  Second, assign the third list to a variable, call it <tt>x3</tt>, like this: <tt>(setf x3 (car (cdr (cdr x)))}</tt>. Finally, pick out the third element of <tt>x3</tt>, like this: <tt>(car (cdr (cdr x3)))</tt>.
 
         <h4>2. <tt>first, second, and third</tt></h4>
 
