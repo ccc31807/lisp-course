@@ -26,6 +26,10 @@
             <li>What are cons cells? There is a direct relation between a computer's memory and CPU (central processing unit). A CPU contains registers, and in older computers, two of them were sometimes known as the `address register' and the `decrement register.' These registers read from memory and wrote to memory. When the CPU processed data, it processed what was called the `contents of address register' or `contests of decrement register.' The Contents of the Address Register was referred to as CAR, and the Contents of the Decrement Register was referred to as CDR. When you thing about <code>(car x)</code> and <code>(cdr y)</code>, you can think about the contents of these memory locations going into the CPU to be processed by the computer.</li>
         </ol>
 
+        <h3>Syntax versus semantics</h3>
+
+        <p>Consider this sentence: The boy saw the girl with the telescope. The <i>syntax</i> of this sentence is perfect as it obeys all the rules of English grammar. However, the <i>semantics</i> leaves a lot to be desired. What does the sentence mean? Who had the telescope, the boy or the girl? This illustrates that a statement in a human language (or a computer language) may be perfectly formed in accordance with the rules of the language, but have faulty semantics.</p>
+
         <h3>Exercises</h3>
 
         <p>The following exercises are not difficult, but they require careful thought. If you are not used to careful thought, you may find that this takes some effort, but still this is not conceptually difficult. The purpose of these exercises is to cement in your mind the concept of lists, and how you access individual members of lists. <spani style="color: red; font-style: italic">These exercises are extremely important!</span> You should take the time to do these.</p>
@@ -82,6 +86,19 @@
                 <li><a href="homework/hw_03d.pdf" target="_blank">homework/hw_03d.pdf</a></li>
              <ol>
 
+     <h3>What we covered:</h3>
+
+     <ul>
+         <li>functions</li>
+         <li>control flow</li>
+     </ul>
+
+
              <p><a href="index.html#curriculum">Return to course home</a></p>
+
+        <script language='JavaScript'>
+            document.write("<p>Revised: " + document.lastModified + "</p>")
+        </script>
+             
     </body>
 </html>

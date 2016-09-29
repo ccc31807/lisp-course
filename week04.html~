@@ -5,7 +5,7 @@
     </head>    
     <body>
 
-        <p><a href="index.html">Return to course home</a></p>
+        <p><a href="index.html#curriculum">Return to course home</a></p>
 
         <h1>Programming Lisp Course Page - Week 4</h1>
 
@@ -24,12 +24,17 @@
         <h3>Homework</h3>
 
             <ol>
-                <li><a href="homework/hw_04a.pdf">homework/hw_04a.pdf</a></li>
-                <li><a href="homework/hw_04b.pdf">homework/hw_04b.pdf</a></li>
-                <li><a href="homework/hw_04c.pdf">homework/hw_04c.pdf</a></li>
-                <li><a href="homework/hw_04c.pdf">homework/hw_04d.pdf</a></li>
+                <li><a href="homework/hw_04a.pdf" target="_blank">homework/hw_04a.pdf</a></li>
+                <li><a href="homework/hw_04b.pdf" target="_blank">homework/hw_04b.pdf</a></li>
+                <li><a href="homework/hw_04c.pdf" target="_blank">homework/hw_04c.pdf</a></li>
+                <li><a href="homework/hw_04c.pdf" target="_blank">homework/hw_04d.pdf</a></li>
              <ol>
 
-             <p><a href="index.html">Return to course home</a></p>
+             <p><a href="index.html#curriculum">Return to course home</a></p>
+
+        <script language='JavaScript'>
+            document.write("<p>Revised: " + document.lastModified + "</p>")
+        </script>
+             
     </body>
 </html>

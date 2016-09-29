@@ -69,8 +69,6 @@
                 <li><a href="homework/hw_02d.pdf" target="_blank">homework/hw_02d.pdf</a></li>
              <ol>
 
-             <p><a href="index.html#curriculum">Return to course home</a></p>
-
      <h3>What we covered:</h3>
 
      <ul>
@@ -79,6 +77,8 @@
          <li>bisection algorithm</li>
          <li>functions</li>
      </ul>
+
+             <p><a href="index.html#curriculum">Return to course home</a></p>
 
     </body>
 </html>

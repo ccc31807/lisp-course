@@ -5,18 +5,19 @@
 \usepackage{url}
 
 \title{Homework, Week 4, part B}
-\date{November 7, 2013}
+\author{lightprogramming.org}
+\date{\today}
 
 \begin{document}
 \maketitle{}
 
-\paragraph{}This builds on the tester you worked on yesterday. This program contains a data structure that has questions and answers, and four functions, give-test (which gives the entire test), ask-question (which asks individual questions), list-answers (which lists individual choices for the multiple choice), and get-answer (which gets the response from the student).
+This builds on the tester you worked on yesterday. This program contains a data structure that has questions and answers, and four functions, give-test (which gives the entire test), ask-question (which asks individual questions), list-answers (which lists individual choices for the multiple choice), and get-answer (which gets the response from the student).
 
-\paragraph{}One problem is that you cannot vary the number of test questions and tell the student the current question. Solve this problem.
+One problem is that you cannot vary the number of test questions and tell the student the current question. Solve this problem.
 
-\paragraph{}There are many ways to do this. I choose to create a new function which declares and initializes three new variables. Barski probably would have done this at the top level. My answer is below. Please think hard about how you would do this before you look at my answer. I also changed \texttt{(ask-question)} to print the current question number, and \texttt{(give-test)} to end the test after the last question.
+There are many ways to do this. I choose to create a new function which declares and initializes three new variables. Barski probably would have done this at the top level. My answer is below. Please think hard about how you would do this before you look at my answer. I also changed \texttt{(ask-question)} to print the current question number, and \texttt{(give-test)} to end the test after the last question.
 
-\paragraph{}I now start the test with the simple command \texttt{(start-test-5 items)}, where 5 is the number of questions and items (as before) is the database of questions and answers.
+I now start the test with the simple command \texttt{(start-test 5 items)}, where 5 is the number of questions and items (as before) is the database of questions and answers.
 
 \lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
 \begin{lstlisting}

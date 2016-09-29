@@ -5,14 +5,15 @@
 \usepackage{url}
 
 \title{Homework, Week 4, part A}
-\date{November 7, 2013}
+\author{lightprogrtamming.org}
+\date{\today}
 
 \begin{document}
 \maketitle{}
 
-\paragraph{}This builds on the tester you worked on last week. This program contains a data structure that has questions and answers, and three functions, give-test (which gives the entire test), ask-question (which asks individual questions), and list-answers (which lists individual choices for the multiple choice.)
+This builds on the tester you worked on last week. This program contains a data structure that has questions and answers, and three functions, give-test (which gives the entire test), ask-question (which asks individual questions), and list-answers (which lists individual choices for the multiple choice.)
 
-\paragraph{}Write a new function that takes a correct answer as an argument, asks the student to enter his answer, compares the student's response with the correct answer, and return 1 if the answers match, 0 otherwise. My function is below. You are allow to peek if you can't figure it out, but try your best before you peek.  Here is the output for the function I wrote. Note the return value for the correct and incorrect answers.
+Write a new function that takes a correct answer as an argument, asks the student to enter his answer, compares the student's response with the correct answer, and return 1 if the answers match, 0 otherwise. My function is below. You are allow to peek if you can't figure it out, but try your best before you peek.  Here is the output for the function I wrote. Note the return value for the correct and incorrect answers.
 
 \lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
 \begin{lstlisting}
@@ -26,7 +27,7 @@ Correct
 1
 \end{lstlisting}
 
-\paragraph{}Here is my function. Notice how I use \texttt{(cond)}. I can't use \texttt{(if)} because each branch does two things --- prints text and returns a value.
+Here is my function. Notice how I use \texttt{(cond)}. I can't use \texttt{(if)} because each branch does two things --- prints text and returns a value.
 
 \lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
 \begin{lstlisting}
