@@ -10,7 +10,7 @@ Week,Date,Start Page, End Page,Topic,Lisp Program
 ,,,,,
 5,7-Oct,67,84,"Lists, graphs, nodes, and edges",wiz-1.lisp
 6,14-Oct,85,102,"reading, writing, and evaluation",wiz-2.lisp
-7,21-Oct,103,114,nameless functions and pointers,
+7,21-Oct,103,114,nameless functions and pointers,hangan.lisp
 8,28-Oct,114,127,creating pictures,
 9,4-Nov,129,146,"Wumpus, version 1",
 ,,,,,
