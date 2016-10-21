@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage[top=1in]{geometry}
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Homework, Week 7, part C}
+\author{lightprogramming.org}
+\date{\today}
+
+\begin{document}
+\maketitle{}
+\lstset{language=Lisp,numbers=left,keepspaces=false,basicstyle=\small,numberstyle=\tiny,breaklines=true,showstringspaces=false}
+
+This continues with the Hangman game. We know how to get the answer from the first player and how to obscure the answer for the second player (at least if the second player doesn't peek --- we'll solve this problem in a few weeks.) We can now write the next bit, which is how to process the guesses.
+
+To begin with, we note that the game consists of a series of guesses, and that the same code can be used for every guess. This strongly suggests some kind of loop. However, we need to check with each occurance of a loop to see if the game has ended, that is, whether the second player has guessed the word or has run out of guesses. The second part is easy: declare a variable for the number of guesses and increment it with each wrong guess. When the bad guesses exceed the number of attempts, the player loses. How would you check to see if the player wins? I took a very simple approach. If no letters are replaced by the obscuring function, the player wins. In other words, if there are no * in \textit{obscure} the game is over. 
+
+Here is my game loop function. It takes three arguments, all lists: the list of the correct answer, the list of good guesses, and the list of bad guesses. It first gets the obscured answer, then gives clues to the player, and then checks the game status. If the length of the bad guesses list exceeds the number of attempts, the player loses. If the obscured text does not contain an *, the player wins. Otherwise. the function calls a second function to process the player's guess.
+
+\begin{lstlisting}
+(defun game-loop (answer good-guesses bad-guesses)
+  (setf obscure (get-obscure good-guesses answer))
+  (format t " Your clue is ~a~%Your bad guesses are ~a~%" 
+            obscure bad-guesses)
+  (cond
+    ((= (length bad-guesses) tries) 
+        (format t "Sorry, you lose. The answer is ~a~%" 
+            (coerce answer 'string)))
+    ((not (member #\* obscure)) 
+        (format t "You win. The answer is ~a.~%" 
+            (coerce answer 'string)))
+    (t (process-guess answer good-guesses bad-guesses))))
+\end{lstlisting}
+
+The function to process the guess is very simple. It takes three arguments, all lists: the correct answer, the list of good guesses, and the list of bad guesses. It prompts the player to enter a guess. reads the character he enters, and converts it to upper case. If the guess is contained in the answer, it calls \texttt{game-loop}, \texttt{cons}ing the guess to the good-guesses list. If not, it calls \texttt{game-loop}, \texttt{cons}ing the guess to the bad-guesses list. (The \texttt{remove-if-not} function is necessary to remove any characters that are not alphabetical characters, such as the newline character.)
+
+\begin{lstlisting}
+(defun process-guess (answer good-guesses bad-guesses)
+  (format t "~%Enter a letter to guess: ~%")
+  (setf guess (char-upcase (read-char)))
+  (cond
+    ((member guess answer)  
+      (game-loop answer (cons guess good-guesses) bad-guesses))
+    (t  
+      (game-loop answer good-guesses (remove-if-not #'alpha-char-p (cons guess bad-guesses))))))
+\end{lstlisting}
+
+\end{document}
